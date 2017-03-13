@@ -2,9 +2,9 @@
 
 This repository contains documents related to the "Rebooting the Web-of-Trust" series of events in the spring of 2017.
 
-## DesignShop April 19th - 21st, 2016
+## DesignShop April 19th - 21st, 2017
 
-The forth DesignShop event, to be held in the Paris, France on April 19th, 20th, & the 21st 2016, is a facilitated, invite-only event focused on creating the next generation of decentralized web-of-trust based identity systems. The goal of this initial DesignShop is to generate 5 technical white papers and/or proposals on topics decided by the group that will have the greatest impact on the future.
+The fourth DesignShop event, to be held in the Paris, France on April 19th, 20th, & the 21st 2017, is a facilitated, invite-only event focused on creating the next generation of decentralized web-of-trust based identity systems. The goal of this initial DesignShop is to generate 5 technical white papers and/or proposals on topics decided by the group that will have the greatest impact on the future.
 
 ### Topics & Advance Readings
 
