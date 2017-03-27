@@ -8,15 +8,24 @@ The [fourth DesignShop event](https://www.eventbrite.fr/e/billets-rebootingwebof
 
 ### Topics & Advance Readings
 
-In advance of the April DesignShop, all participants were requested to post in the [Topics and Advanced Readings](topics-and-advance-readings) folder a 1 or 2 page topics paper to be shared with other attendees on either:
-* A specific problem that you'd like to solve with a web-of-trust solution, and why current solutions (pgp or ca-based pki) can't address the problem?
-*  A specific solution related to the web-of-trust that you'd like others to use or contribute to?
+In advance of the April DesignShop, all participants were requested to post in the [Topics and Advanced Readings](topics-and-advance-readings) folder a one- or two-page topics paper to be shared with other attendees on either:
+
+* A specific problem that you'd like to solve with a web-of-trust solution, and why current solutions (such as PGP or CA-based PKI) can't address the problem.
+*  A specific solution related to the web-of-trust that you'd like others to use or contribute to.
 
 _We'll update this with a list of topic papers as they arrive._
 
 ### Other Readings of Interest
 
-Following are some of the informative or notable papers from past design shops. They're good reading to understand who we are and what our priorities and goals are:
+Following are some of the finished papers from past design shops. They're good reading to understand who we are and what our priorities and goals are:
 
-   * [Rebranding the Web of Trust](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust/blob/master/final-documents/rebranding-web-of-trust.pdf) — What is the Webof Trust? A quick overview.
-   * [DID Implementer's Draft](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/master/final-documents/did-implementer-draft-10.pdf) — The draft for decentralized identifiers, the most robust and complete spec to come out of our design shops. 
+   * [Rebranding the Web of Trust](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust/blob/master/final-documents/rebranding-web-of-trust.pdf) — What is the Webof Trust? A quick overview. _RWOT1_
+   * [DID Implementer's Draft](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/master/final-documents/did-implementer-draft-10.pdf) — The draft for decentralized identifiers, the most robust and complete spec to come out of our design shops. _RWOT3_
+   * [Satisfying Real-World Use Cases](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust/blob/master/final-documents/satisfying-real-world-use-cases.pdf) — Digital identity in the real-world. _RWOT1_
+   * [Identity Crisis: Identity through Correlation](https://github.com/WebOfTrustInfo/ID2020DesignWorkshop/blob/master/final-documents/identity-crisis.pdf) — An alternative way to look at identity. _RWOT2_
+   * [HIE of One Blockchain](https://github.com/WebOfTrustInfo/ID2020DesignWorkshop/blob/master/final-documents/physician-patient-relationship.pdf) — Identity and the physician-patient relationship. _RWOT2_
+   * [Smart Consent Protocol](https://github.com/WebOfTrustInfo/ID2020DesignWorkshop/blob/master/final-documents/physician-patient-relationship.pdf) — COALA and Consent Receipts. _RWOT3_
+   
+You may also wish to read Christopher Allen's core article on self-sovereign identity:
+
+   * [The Path to Self-Sovereign Identity](http://www.lifewithalacrity.com/2016/04/the-path-to-self-soverereign-identity.html) — Ten principles of self-sovereign identity. _Life with Alacrity_
