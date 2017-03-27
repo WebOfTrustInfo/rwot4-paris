@@ -24,7 +24,7 @@ Following are some of the finished papers from past design shops. They're good r
    * [Satisfying Real-World Use Cases](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust/blob/master/final-documents/satisfying-real-world-use-cases.pdf) — Digital identity in the real-world. _RWOT1_
    * [Identity Crisis: Identity through Correlation](https://github.com/WebOfTrustInfo/ID2020DesignWorkshop/blob/master/final-documents/identity-crisis.pdf) — An alternative way to look at identity. _RWOT2_
    * [HIE of One Blockchain](https://github.com/WebOfTrustInfo/ID2020DesignWorkshop/blob/master/final-documents/physician-patient-relationship.pdf) — Identity and the physician-patient relationship. _RWOT2_
-   * [Smart Consent Protocol](https://github.com/WebOfTrustInfo/ID2020DesignWorkshop/blob/master/final-documents/physician-patient-relationship.pdf) — COALA and Consent Receipts. _RWOT3_
+   * [Smart Consent Protocol](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/master/final-documents/smart-consent-protocol.pdf) — COALA and Consent Receipts. _RWOT3_
    
 You may also wish to read Christopher Allen's core article on self-sovereign identity:
 
