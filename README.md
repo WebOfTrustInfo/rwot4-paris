@@ -4,7 +4,7 @@ This repository contains documents related to the "Rebooting the Web-of-Trust" s
 
 ## DesignShop April 19th - 21st, 2017
 
-The [forth DesignShop event](https://www.meetup.com/Rebooting-the-Web-of-Trust-RWoT-Europe/events/235396181/), to be held in the Paris, France on April 19th, 20th, & the 21st 2017, is a facilitated, invite-only event focused on creating the next generation of decentralized web-of-trust based identity systems. The goal of this initial DesignShop is to generate 5 technical white papers and/or proposals on topics decided by the group that will have the greatest impact on the future.
+The [forth DesignShop event](https://www.eventbrite.fr/e/billets-rebootingweboftrust-design-workshop-paris-2017-32228513351), to be held in the Paris, France on April 19th, 20th, & the 21st 2017, is a facilitated, invite-only event focused on creating the next generation of decentralized web-of-trust based identity systems. The goal of this initial DesignShop is to generate 5 technical white papers and/or proposals on topics decided by the group that will have the greatest impact on the future.
 
 ### Topics & Advance Readings
 
