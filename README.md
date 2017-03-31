@@ -13,8 +13,10 @@ In advance of the April DesignShop, all participants were requested to post in t
 * A specific problem that you'd like to solve with a web-of-trust solution, and why current solutions (such as PGP or CA-based PKI) can't address the problem.
 *  A specific solution related to the web-of-trust that you'd like others to use or contribute to.
 
-_We'll update this with a list of topic papers as they arrive._
+Our current list of topic papers:
 
+   * [Trust for Security and Security for Trust](topics-and-advance-readings/topic_alexopoulos.md) by Nikolaos Alexopoulos
+   
 ### Other Readings of Interest
 
 Following are some of the finished papers from past design shops. They're good reading to understand who we are and what our priorities and goals are:
