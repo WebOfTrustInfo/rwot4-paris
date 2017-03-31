@@ -1,7 +1,7 @@
-#Trust for Security and Security for Trust
-A topic paper proposed by Nikolaos Alexopoulos, Technische Universität Darmstadt and SFB CROSSING
+# Trust for Security and Security for Trust
+### A topic paper proposed by Nikolaos Alexopoulos, Technische Universität Darmstadt and SFB CROSSING
 
-##Security needs trust
+## Security needs trust
 
 Many cryptographic and security-critical systems implicitly or explicitly depend on a notion of
 trust towards entities and devices. Some of the applications of these systems are:
@@ -19,7 +19,7 @@ to call them)
 cannot alleviate the need for trust in entities altogether, but can help secure these
 trust infrastructures.
 
-##Trust needs security (and Privacy)
+## Trust needs security (and Privacy)
 
 Trust infrastructures need to be secure against threats and single points of
 failure. Transparency and global synchronization can offer a lot to
@@ -39,7 +39,7 @@ Challenges like the choice of blockchain, thin clients etc. are also prevalent
 as in most similar designs. Formalization is also something generally
 missing.
 
-##Towards a multipurpose trust infrastructure for security 
+## Towards a multipurpose trust infrastructure for security 
 
 * Provide the ability to store directed probabilistic trust assessments
 in ODLs, forming webs of trust
