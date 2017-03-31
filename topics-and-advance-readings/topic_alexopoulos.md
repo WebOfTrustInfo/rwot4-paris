@@ -12,7 +12,7 @@ trust towards entities and devices. Some of the applications of these systems ar
 * Secure Routing
 * Collaborative Intrusion Detection, etc.
 
-Probabilistic trust values can be calculated and propagated through the network.
+Probabilistic trust values (belief theory - subjective logic) can be calculated and propagated through the network.
 
 Blockchain technology (or Open Distributed Ledgers in general - ODLs as we like
 to call them)
