@@ -16,6 +16,7 @@ In advance of the April DesignShop, all participants were requested to post in t
 Our current list of topic papers:
 
    * [Trust for Security and Security for Trust](topics-and-advance-readings/topic_alexopoulos.md) by Nikolaos Alexopoulos
+   * [Verifiable Claims and Web of Trust](topics-and-advance-readings/WoTVerifiableClaims.md) by Manu Sporny, Christopher Allen, Joe Andrieu, Matthew Collier, Dave Longley, and Adam Lake
    
 ### Other Readings of Interest
 
