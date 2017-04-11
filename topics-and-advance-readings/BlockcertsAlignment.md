@@ -2,23 +2,35 @@
 
 ### Note on terminology
 
-Philipp/Nate: suggestions welcome!!
+(alternatives welcome)
 
 This uses the term "document" to refer to a credential being issued to a recipient. This is to avoid confusion with terms that already have precise meanings in the [Verifiable Claims data model](https://opencreds.github.io/vc-data-model/). Note that the existing Open Badges/Blockcerts formats roughly correspond to a set of Claims and Identity Profiles in the VC definitions.
 
 ## Context
 
-[Blockcerts](http://www.blockcerts.org/) is a certification infrastructure that puts recipients in control of their achievements and accomplishments. It consists of open standards and open source libraries enabling blockchain issuing and verification of documents. The Blockcerts is [Open Badges](https://openbadgespec.org/) compliant. We are working with the OBI team to contribute these blockchain extensions to the Open Badges standard, enabling blockchain verification for the broader Open Badges community.
+[Blockcerts](http://www.blockcerts.org/) is a certification infrastructure that puts recipients in control of their achievements and accomplishments. It consists of open standards and open source libraries enabling blockchain issuing and verification of documents. Blockcerts is [Open Badges](https://openbadgespec.org/) compliant. Blockcerts is working with the Open Badges Initiative (OBI) to contribute blockchain extensions back to the Open Badges standard, enabling blockchain verification for the broader OBI community.
 
-Blockcerts uses the blockchainn, as opposed to traditional PKI techniques, as a scalable way to enable trustless verification of claims, and recipient control of their data. The role of trusted timestamps provided by construction with a blockchain solution...
+## Why we have not used CA-based PKI approaches, and why we are interested in RWoT
 
-Blockcerts intentionally does not address identity -- partiticipants are represented only by their cryptographic keys. However, a decentralized identity or a web of trust approach would fit perfectly with the architecture and ideals of the problem.
+Blockcerts uses blockchain, as opposed to traditional PKI techniques, to scalably enable trustless verification. The verification process requires a reliable timestamp at which the transaction occurred. This, combined with public key(s) (with or without expired dates) claimed by the issuer, are used to ensure _the transaction happened at a time when the issuer claimed ownership of the key_. This is essential for: 
 
-The Blockcerts and Open Badge communities are interested in participating in the Verifiable Claims ecosystem and community. This describes potential topics for Rebooting Web of Trust Spring 2017 to enable aligning standards and specifications to the VC framework.
+- allowing issuer to rotate keys (in keeping with good security practices), without needing to revoke and re-issue every certificate ever issued.
+- if a key is known to be leaked, valid documents will remain valid, and invalid documents will be flagged (per the expired/revoked date of the key)
 
-## Rebooting Web of Trust Spring 2017 Topics
+With blockchain approaches, the timestamp (and contents) are tamper proof by construction. We considered PKI type approaches, but there are a range of technical and philosophical issues, ranging from needing to rely on a timestamp authority server, trust in the certificate authority, and potential barriers to entry this would impose.
 
-The following topics are smaller in scope and could feasibly be addressed at RWOT. Details of each follow
+The Blockcerts project intentionally does not address identity -- participation requires only cryptographic keys. Yet, identity is a critical aspect of a deployed Blockcerts system. And while it will never be part of the Blockcerts core, we are researching best practice approaches for our deployments and as recommendations for the community. 
+
+RWoT's efforts on decentralized identity are well aligned to our goals of enabling open participation and recipient control. 
+
+We are also interested in other efforts promoted by this group:
+- Verifiable Claims (and general alignment of OBI with VS data model)
+- JSON-LD signatures
+- Proof of publication
+
+## Rebooting Web of Trust Spring 2017 Topics (summary)
+
+We propose a small, but feasible subset of topics for Rebooting Web of Trust Spring 2017. This will help kickstart our alignment of Blockcerts' standards and specifications with Verifiable Claim, JSON-LD signatures, etc. These are elaborated in subsequent sections.
 
 - Aligning signature schema and techniques, including proof of publication-style Merkle proofs
 - Expressing recipient cryptographic key in the issued document, allowing recipient to make a strong claim of ownership
@@ -29,14 +41,16 @@ The following are broader topics that require further elaboration, but any conve
 - Longevity of credentials
 - Broader alignment of Open Badges into claims
 
-## Aligning signature schema and techniques
+## Topic 1: Aligning signature schema and techniques
 
-Blockcerts uses Merkle proofs and JSON-LD signatures as part of verification (it relies on JSON-LD canonicalization to predictably format an input json-formatted document). The format is heavily inspired by specifications generated by RWOT and Verifiable Claims groups, including:
+Blockcerts uses Merkle proofs and JSON-LD signatures for issuing and verification. JSON-LD normalization (canonicalization) is a critical element, used to predictably format a json-formatted input document. 
+
+The Blockcerts signature schema is heavily inspired by specifications generated by RWOT and Verifiable Claims groups, including:
 
 - [EcdsaKoblitzSignature2016](https://w3c-dvcg.github.io/lds-koblitz2016/) are formatted as follows:
 - [Proof of Publication](https://web-payments.org/specs/source/pop2016/)
 
-Blockcerts currently uses Chainpoint V2 merkle receipt format, with plans to enable other formats, e.g. [Peter Todd's Open Timestamps](https://petertodd.org/2016/opentimestamps-announcement). Further details are at the end.
+Blockcerts currently uses Chainpoint V2 merkle receipt format, with plans to enable other formats, e.g. [Peter Todd's Open Timestamps](https://petertodd.org/2016/opentimestamps-announcement). 
 
 ```
 "signature": {
@@ -60,40 +74,35 @@ Blockcerts currently uses Chainpoint V2 merkle receipt format, with plans to ena
 }
 ```
 
-Some aspects of JSON-LD signatures are not an ideal fit for blockchain verification, which has resulted in duplication and ambiguity in some of our schema.  Per a recent email thread, there is interest in alignment with JOSE/JWS, but we also have some concerns with this (per Manu's email, details are emerging soon and my concerns may be out of date).
+Some aspects of JSON-LD signatures are not an ideal fit for blockchain verification, which has resulted in some duplication and ambiguity in our schema.  Per VC discussions and [this thread](https://lists.w3.org/Archives/Public/public-credentials/2017Apr/0023.html), there is interest in aligning JSON-LD signatures with JOSE/JWS, but we also have some concerns with this. (Note that, per Manu's email, details are emerging soon, and my concerns may be out of date).
 
-In general, clarification and generalization of the JSON-LD signature standard (and/or its evolution with JOSE/JWS) would help express blockchain signatures.
-
-Concerns include:
+Clarification and generalization of the JSON-LD signature standard (and/or its evolution with JOSE/JWS) would help express blockchain signatures. Some concerns include:
 
 - The 'signatureValue' field is not necessary if the issuing key is the same used to sign the document (which is true in the Blockcerts case). 
-    - Could `signatureValue` be removed as a required field in favor of the merkle proof?
-    - Per (XXX) thread, there are additional concerns with relying on Koblitz signature as standalone. 
-- 'created' is less important than the blockchain timestamp. Including this field in a blockchain certificate introduces confusion as to the interpretation of this field. One option is to clarify the role of the transaction timestamp in verifiction.
+  - Could `signatureValue` be removed as a required field in favor of the merkle proof for blockchain-issued documents?
+  - Per [this thread](https://lists.w3.org/Archives/Public/public-credentials/2017Apr/0000.html), there are additional concerns with relying on Ecdsa Koblitz signatures. 
+- 'created' is less important than the blockchain timestamp. 
+  - Including this field in a blockchain certificate introduces confusion as to the interpretation of this field. 
+  - One option is to clarify the role of the transaction timestamp in verifiction.
 - 'creator' field, if assumed to be the issuer of the blockchain transaction, is present in the transaction
-    - Note that OBI/Blockcerts allows specification of Issuer Key URI ('creator' field) in the issuer profile. The type is [Key](https://web-payments.org/vocabs/security#Key). In Blockcerts, it is enforced to be the same.
-- JOSE/JWS: we are very interested in alignment of json-ld signatures with JWS, but have concerns about the resulting format and usability. [List of historical concerns have been outline here](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/6674642d88aaeee07489d98ddd75bf89aff5ecee/topics-and-advance-readings/blockchain-extensions-for-linked-data-signatures.md#json-normalized-clear-text-signatures).
+  - Note that OBI/Blockcerts allows specification of Issuer Key URI ('creator' field) in the issuer profile. The type is [Key](https://web-payments.org/vocabs/security#Key). In Blockcerts, it is enforced to be the same.
+- JOSE/JWS: we are very interested in alignment of json-ld signatures with JWS, but have concerns about the resulting format and usability. 
+  - [List of historical concerns have been outline here](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/6674642d88aaeee07489d98ddd75bf89aff5ecee/topics-and-advance-readings/blockchain-extensions-for-linked-data-signatures.md#json-normalized-clear-text-signatures).
 
 Other questions
 - Any interest in revisiting Proof of Publication? 
-- Dropping of additional fields in JSON-LD normalization
-  - Blockcerts addresses this through use of the '@vocab' keyword to detect fields not present in any JSON-LD context.
+- Standardization of a JSON-LD signature approach to dropped fields during JSON-LD normalization
+  - Blockcerts addresses this through use of the '@vocab' keyword to detect fields not present in any JSON-LD context
+  - Ideally verifiers could adopt a standard convention to flag such attempts to alter a claim
 
-## Recipient Strong Claim of Ownership
+## Topic 2: Recipient Strong Claim of Ownership
 
-Embedding the recipient's cryptographic key in the certificate allows the recipient to make a strong claim of ownership (by signing a message). For that reason, we want to include (as an OBI extension) a public key that the recipient owns in the credential. 
+Embedding the recipient's cryptographic key in the document issued on the blockchain allows the recipient to make a strong claim of ownership (by signing a message). For that reason, we plan to include (as an OBI extension) a public key that the recipient owns in the document. 
 
 In the Blockcerts model, the credential recipient provides their own public key (in advance of issuing) to the issuer. The notion of identity is external to the Blockcerts project; it is assumed (and enforced in various ways in implementations) that the issuer and recipient have a separate means of establishing identity and transferring keys.
 
-Current version has added 'publicKey' and reserved 'id' on the recipient profile object for future expression as a DID
+The current Blockcerts schema has added `publicKey` field to a recipient object, and reserved `id` on this object for future expression as a DID.
 
-ref: https://opencreds.github.io/vc-data-model/#dfn-identity-profile-model
-
-## Long term questions
-- Anything that is assumed to be hosted (issuer profiles, etc) should have high confidence of permanence (e.g. IPFS hosting)
-- Key rotation?
-- DID
-- Putting recipient in the communication
 
 ## Reference
 
@@ -115,12 +124,16 @@ Note that the last JSON-LD signature step is unnecessary. Because each document 
 
 ### Blockcerts Verification
 
-- Fetch blockchain transaction info
-	- issuing address
-	- op_return field (or similar anchor)
-	- time
- - Issuer profile/Issuer key
+Inputs:
 
+- Document with proof (1 json file -- [schema](https://github.com/blockchain-certificates/cert-schema/issues/28))
+- Fetch blockchain transaction info given in the proof. This reveals:
+    - issuing address
+    - op_return field (or similar anchor)
+    - time
+ - Issuer profile/Issuer key
+    - effectively the [Identity and Key objects described here](http://opencreds.org/specs/source/identity-credentials/)
+    - OBIv2 has aligned its issuer objects with this approach, and Blockcerts relies on this
 
 Steps:
 
@@ -136,5 +149,3 @@ Steps:
 	- The Open Badge format expects a revocationList URI, currently expected to be hosted URL in a certain format. See long term notes
 - Not expired
 	- Open badges standard supplies an expiration date field, which is currently used by verification. See long term notes.
-
-https://github.com/blockchain-certificates/cert-schema/issues/28
