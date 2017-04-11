@@ -1,5 +1,3 @@
-
-
 Fostering the resilience of an ecosystem of workers through regulated decentralized reputation
 ========================================================================
 *Philippe Honigman, Klara Sok*
@@ -20,7 +18,9 @@ Digital platforms and public social networks are increasingly being used by work
 While Cepa consultants' assistance is consistently praised by the workers they interact with, their reach and their knowledge are limited. With the consultants' help, managers could engage with each other in order to develop their network, access new opportunities, learn about other jobs and sectors they might head to. The intended result would be to make professional careers more resilient and more fulfilling.
 
 Hence the project of a public platform, designed and operated as a common, whose main goal would be to enable workers - and all the stakeholders of the working world - to help each other as a network of peers.
-###Peer Interactions and Acknowledgement
+
+### Peer Interactions and Acknowledgement
+
 Figure (a) describes the main agents and operations taking place in the network the platform:
 ![enter image description here](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/supporting-files/Fostering-1.png?raw=true)
 *Figure (a) - agents and operations in the network*
@@ -31,7 +31,8 @@ Once activated by the regulator, `catalysts` can instantiate a connecting event 
 An event will connect at least one `giving worker` and one `receiving worker`. `Giving` or `receiving` are roles, thus the same person may be in turn giving or receiving on the same event.
 
 During or after the event, receiving workers may provide a feedback about their experience and acknowledge the value received from the giving worker. This value is accumulated as `reputation` by the giving worker.
-Central regulation, decentralized reputation flow
+
+### Central regulation, decentralized reputation flow
 
 The initial project is carried out as an Cepa's initiative. In this first phase :
 -	catalysts are Cepa consultants ;
@@ -40,7 +41,9 @@ The initial project is carried out as an Cepa's initiative. In this first phase 
 -	the evaluation process leading to the issuance of reputation is decentralized.
 
 Each worker is free to acknowledge the value received from any of her peers through a connecting event. Resulting reputation may be made available to third-parties, without depending on Cepa's policy nor availability of their information system. Managers' reputation is considered as an attribute of their self-sovereign identities. While acquiring reputation requires to play by the rules defined by Cepa as the regulator of the network, workers are to be empowered to use it as they see fit.
-###From central authority to decentralized governance
+
+### From central authority to decentralized governance
+
 In the initial phase, the network could display similarities with hybrid system such as SingularDTV, which defines itself as a "centrally organized, distributed entity".
 
 As the sole regulator of the network, Cepa controls its operations by naming and revoking catalysts, defining the rules of engagement associated to connecting events, and establishing how reputation can be acquired and depreciated over time.
@@ -49,11 +52,15 @@ Cepa's public mandate confers legitimacy on the project among workers. As its ma
 
 ![enter image description here](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/supporting-files/Fostering-2.png?raw=true)
 *Figure (b) - two layers of decentralization*
-###Incentivization through tokenized reputation
+
+### Incentivization through tokenized reputation
+
 The purpose of the proposed system is not to create a market of services between workers, but to encourage peer support. Hence incentives cannot rely on direct monetization of peer services ; they should be symbolic rather than monetary. Tokenized reputation can be used to that effect.
 
 In addition to materialize peers' gratitude and acknowledgement, quantified representation of workers' reputation may be used by individuals and organizations to access - otherwise hidden - pools of expertise.
+
 ### From acknowledgement to reputation
+
 Previous initiatives such as the Portable Reputation Toolkit apprehend reputation as the result of a verification process of one's claims. In the proposed system, reputation isn't about checking the truthfulness of a given assertion ; it is defined as a function of aggregated acknowledgements resulting from a regulated interaction between 2 agents.
 
 There is no claim to be verified, nor truth to be established about them. Peers are offered the possibility to express their subjective perception of the value delivered through the interaction. Those evaluations are aggregated and processed according to the rules defined by the regulator, in order to be eventually accounted as one's reputation. Here are a few examples of possible rules:
@@ -78,31 +85,24 @@ It's worth noting that the reputation network introduced here does require the s
 
 In addition, we would like to suggest some properties that may be deemed as necessary with respect to our use case:
 
--     Obfuscable - (or selectively disclosable) Reputation is a sensitive personal information that should only be exposed with the full consent of its owner.
+-    Obfuscable - (or selectively disclosable) Reputation is a sensitive personal information that should only be exposed with the full consent of its owner.
 -    Semantic - Professional reputation is highly contextual. Reputational data needs to be linkable to some classification, ontology or tagging system. 
+
 ### Open questions for RWoT-Europe 2017 working group
 The Cepa use case lead to the following challenges proposed for consideration by Rebooting-the-Web-of-Trust Working Group: 
 
 1.    Enabling agents to obfuscate their reputational attributes, while ensuring that both the identity of each worker and her reputation history are verifiable
-
     The core purpose of the system is not to generate reputation ; it is to make it easier for professionals to seek, find and offer valuable help to their peers.
-    
-	Reputation is a by-product, that may prove extremely useful, and extremely sensitive as well. Hence its disclosure shouldn't be imposed by the system. A member should be able to hide or disclose her reputation as she sees fits.
-	
+	Reputation is a by-product, that may prove extremely useful, and extremely sensitive as well. Hence its disclosure shouldn't be imposed by the system. A member should be able to hide or disclose her reputation as she sees fits.	
 	On the other hand, when disclosed to 3rd parties, one's reputation should be (cryptographically) verifiable.
 
 2.    Modelling a web of trust scheme that allows for **verifiable**, **dynamic** and **upgradable** computation of reputation (smart contract architecture)
-
      Verifiability refers to the ability to independently trace the history of signed evaluations that serves as the raw material for computing reputation.
-     
      Dynamic concerns the application of rules for computing reputation, out of past evaluations and according to consensus-based decisions among regulators. For instance, such rules may determine the rate of depreciation of reputation over time, or weight higher evaluations that take place in the same physical location.
-     
      Upgradability relates to the ability to change the rules of the system, including the way rules can be changed. When smart contract are to be used for dynamic processing of reputation, keeping the community of regulators in control of the system requires an instrument for "meta-governance".
 
 3.    Discussing the social acceptability of different forms of evaluation in a professional environment
-
 	Decentralized evaluations are not necessarily desirable in every circumstance. While some form of social rating (reddit, Stack Overflow, github, etc) do not seem to raise many objections, some others are highly controversial or induce complex strategies to cheat the system.
-
 	We would like to discuss how different factors might influence the way evaluation is perceived in the context of a web of trust: formats of evaluation and reputation data, transparence vs. obfuscation of evaluation data, etc.
 
 ### Some related work
@@ -110,4 +110,3 @@ The Cepa use case lead to the following challenges proposed for consideration by
 -  [Privacy-ABC Technologies, Personal Data Ecosystem, and Business Models](https://abc4trust.eu/download/R2.1%20-%20PDE%20and%20ABC%20Review%20V1.0.pdf)
 -  [Portable Reputation Toolkit](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/master/topics-and-advance-readings/portable-reputation-toolkit.md)
 - [Social Credit System](https://en.wikipedia.org/wiki/Social_Credit_System)
-
