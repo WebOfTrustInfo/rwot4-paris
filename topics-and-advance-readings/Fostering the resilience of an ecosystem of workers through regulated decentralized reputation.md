@@ -89,7 +89,7 @@ In addition, we would like to suggest some properties that may be deemed as nece
 -    Semantic - Professional reputation is highly contextual. Reputational data needs to be linkable to some classification, ontology or tagging system. 
 
 ### Open questions for RWoT-Europe 2017 working group
-The Cepa use case lead to the following challenges proposed for consideration by Rebooting-the-Web-of-Trust Working Group: 
+The Cepa use case leads to the following challenges proposed for consideration by Rebooting-the-Web-of-Trust Working Group: 
 
 1.    Enabling agents to obfuscate their reputational attributes, while ensuring that both the identity of each worker and her reputation history are verifiable.
     The core purpose of the system is not to generate reputation ; it is to make it easier for professionals to seek, find and offer valuable help to their peers.
