@@ -1,40 +1,28 @@
 # Blockcerts and Open Badges as Verifiable Claims
 
-Note on terminology:
+### Note on terminology (suggestions welcome!)
+
 This uses the term "document" to refer to a credential being issued to a recipient. This is to avoid confusion with terms that already have precise meanings in the Verifiable Claims data model](https://opencreds.github.io/vc-data-model/). Note that the existing Open Badges/Blockcerts formats roughly correspond to a set of Claims and Identity Profiles in the VC definitions.
 
 ## Context
 
-Blockcerts is an open standard and set of open source libraries enabling blockchain issuing and verification of documents. Blockcerts is Open Badge compliant, with extensions for Blockchain verification. With the OBI team, these extensions will be contributed as official OBI extensions, to enable blockchain verification for the broader open badge community.
+[Blockcerts](http://www.blockcerts.org/) is a set of open standards and open source libraries enabling blockchain issuing and verification of documents. Blockcerts is compliant with [Open Badges](https://openbadgespec.org/). We are working with the OBI team to contribute these blockchain extensions to the Open Badges standard, enabling blockchain verification for the broader Open Badges community.
 
-The Blockcerts and Open Badge communities are interested in participating in the Verifiable Claims ecosystem and community, and aligning standards accordingly.
+The Blockcerts and Open Badge communities are interested in participating in the Verifiable Claims ecosystem and community. This describes potential topics for Rebooting Web of Trust Spring 2017 to enable aligning standards and specifications to the VC framework.
 
-## Rebooting Web of Trust Spring 2017 topics
+## Rebooting Web of Trust Spring 2017 Topics
 
-The following are smaller in scope and could feasibly be addressed at RWOT. Optionally, these can be rolled into existing topics.
-- Alignment of signatures and verification techniques
+The following topics are smaller in scope and could feasibly be addressed at RWOT. Details of each follow
+
+- Aligning signature schema and techniques
 - Proof of publication-style Merkle proofs
+- Expressing recipient cryptographic key in the issued document, allowing recipient to make a strong claim of ownership
 
-The following topics are very likely too large in scope (mostly because the problem statement is not yet broken down) to take as topics for RWOT, but would be interesting topics of conversation.
+The following are broader topics that require elaboration before making progress, but any conversation along these lines would be useful. 
+
 - Decentralized identity
 - Longevity 
 - Broader alignment of Open Badges into claims
-
-## Blockcerts Issuing
-
-- Input is a batch of json-formatted documents (currently content of each is an OBI-compliant badge)
-- For each document:
-   - perform JSON-LD normalization
-   - take SHA256 hash of normalized result
-   - add hash to Merkle tree
-- Issue Merkle root on blockchain. The transaction is signed with issuer's cryptographic key (e.g. bitcoin blockchain uses a bitcoin public address)
-- Additionally, for each document, sign the JSON-LD normalized payload consistent with JSON-LD signatures 
-
-The resulting Blockcert contains the original document and the signature/merkle proof. JSON-LD normalization, along with merkle proof allows predictable verification of the issued document
-
-Note that the last JSON-LD signature step is unnecessary. Because each document is sha256 hashed and placed into a merkle tree, issued on the blockchain, and the issuer signing key is the one performing the blockchain transaction, the separate signatureValue is actually unnecessary. 
-
-Why we are using blockchain issuing and verification. Source of trusted timestamp (see details)
 
 ## Aligning signature schema and techniques
 
@@ -54,6 +42,28 @@ Concerns with JOSE/JWS:
 We are very interested in alignment of json-ld signatures with JWS. Some concerns:
 - They are not JSON
 https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/6674642d88aaeee07489d98ddd75bf89aff5ecee/topics-and-advance-readings/blockchain-extensions-for-linked-data-signatures.md#json-normalized-clear-text-signatures
+
+## Blockcerts Issuing
+
+- Input is a batch of json-formatted documents (currently content of each is an OBI-compliant badge)
+- For each document:
+   - perform JSON-LD normalization
+   - take SHA256 hash of normalized result
+   - add hash to Merkle tree
+- Issue Merkle root on blockchain. The transaction is signed with issuer's cryptographic key (e.g. bitcoin blockchain uses a bitcoin public address)
+- Additionally, for each document, sign the JSON-LD normalized payload consistent with JSON-LD signatures 
+
+The resulting Blockcert contains the original document and the signature/merkle proof. JSON-LD normalization, along with merkle proof allows predictable verification of the issued document
+
+Note that the last JSON-LD signature step is unnecessary. Because each document is sha256 hashed and placed into a merkle tree, issued on the blockchain, and the issuer signing key is the one performing the blockchain transaction, the separate signatureValue is actually unnecessary. 
+
+Why we are using blockchain issuing and verification. Source of trusted timestamp (see details)
+
+
+
+## Recipient Strong Claim of Ownershup
+
+We are passionate about a recipient-centric approach, including the recipient's ability to make a strong proof of ownership. For that reason, we want to include (as an OBI extension) a public key that the recipient owns in the credential. Are there any properties in the Identity Profile that would be natural to reuse here, for storing a recipient's public key? Could this be 'creator'?
 
 ## Blockcerts Verification
 
