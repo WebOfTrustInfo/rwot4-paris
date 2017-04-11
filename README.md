@@ -18,6 +18,7 @@ Our current list of topic papers:
    * [Aligning Signature Formats](topics-and-advance-readings/SignatureFormatAlignment.md) by Manu Sporny, Christopher Allen, Jason Law, and Ryan Shea
    * [Trust for Security and Security for Trust](topics-and-advance-readings/topic_alexopoulos.md) by Nikolaos Alexopoulos
    * [Verifiable Claims and Web of Trust](topics-and-advance-readings/WoTVerifiableClaims.md) by Manu Sporny, Christopher Allen, Joe Andrieu, Matthew Collier, Dave Longley, and Adam Lake
+   * [Credit based Reputations for Identity Management with Blockchain and Flow Networks](topics-and-advance-readings/RWoT_INSA.pdf) by Tobias Mayer, Omar Hasan, Lionel Brunie
    
 ### Other Readings of Interest
 
