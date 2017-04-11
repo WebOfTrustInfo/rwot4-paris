@@ -4,7 +4,7 @@
 
 Philipp/Nate: suggestions welcome!!
 
-This uses the term "document" to refer to a credential being issued to a recipient. This is to avoid confusion with terms that already have precise meanings in the Verifiable Claims data model](https://opencreds.github.io/vc-data-model/). Note that the existing Open Badges/Blockcerts formats roughly correspond to a set of Claims and Identity Profiles in the VC definitions.
+This uses the term "document" to refer to a credential being issued to a recipient. This is to avoid confusion with terms that already have precise meanings in the [Verifiable Claims data model](https://opencreds.github.io/vc-data-model/). Note that the existing Open Badges/Blockcerts formats roughly correspond to a set of Claims and Identity Profiles in the VC definitions.
 
 ## Context
 
