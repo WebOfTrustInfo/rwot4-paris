@@ -26,11 +26,32 @@ The following are broader topics that require elaboration before making progress
 
 ## Aligning signature schema and techniques
 
-Concerns with current approach:
-- Redundancy in signature schema:
-	- open badges/blockcerts allows specification of Issuer Key URI ('creator' field)
-	  - https://web-payments.org/vocabs/security#Key
-	- 'created' is less important than the blockchain timestamp
+Some aspects of JSON-LD signatures are not an ideal fit with Blockcerts. Clarification of the JSON-LD signature standard on the following points would help.
+
+For reference, [EcdsaKoblitzSignature2016](https://w3c-dvcg.github.io/lds-koblitz2016/) are formatted as follows:
+```
+"signature": {
+    "type": "EcdsaKoblitzSignature2016",
+    "created": "2016-10-23T05:50:16Z",
+    "creator": "ecdsa-koblitz-pubkey:020d79074ef137d4f338c2e6bef2a49c618109eccf1cd01ccc3286634789baef4b",
+    "domain": "example.com",
+    "signatureValue": "H1jslvQ08/hAiqUSNiGoAYqU8sRCrwkgcNO/9xKxqZJTAX5v5SbAcBv69wrAQovBHR9ddfwvW1Skogbi1odGt7o="
+  }
+```  
+Concerns include:
+
+- Redundancy in required fields of JSON-LD signature:
+    - 'created' is less important than the blockchain timestamp. Including this in a blockchain certificate introduces confusion as to the interpretation of this field.
+    - 'creator' field, if assumed to be the issuer of the blockchain transaction, is present in the transaction
+        - Note that OBI/Blockcerts also allows specification of Issuer Key URI ('creator' field) in the issuer profile. The type is [Key](https://web-payments.org/vocabs/security#Key). In Blockcerts, it is enforced to be the same.
+    - 'signatureValue' is not actually required if issued on a blockchain
+
+Concerns with JOSE/JWS:
+We are very interested in alignment of json-ld signatures with JWS. The primary concern is that they are not JSON. See detailed [list of concerns](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/6674642d88aaeee07489d98ddd75bf89aff5ecee/topics-and-advance-readings/blockchain-extensions-for-linked-data-signatures.md#json-normalized-clear-text-signatures).
+
+Note: this info is likely out of date 
+
+## Merkle proof
 - We use Chainpoint schema for merkle proofs in the 'signature' section, but are interested in aligning with other proof techniques, e.g. Proof of Publication
 - Generalization of 'signature' for blockchain receipts
 	- Remove 'signatureValue' as required field?
@@ -38,12 +59,30 @@ Concerns with current approach:
 - Dropping of additional fields in JSON-LD normalization
   - Blockcerts addresses this through use of the '@vocab' keyword to detect fields not present in any JSON-LD context.
 
-Concerns with JOSE/JWS:
-We are very interested in alignment of json-ld signatures with JWS. Some concerns:
-- They are not JSON
-https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/6674642d88aaeee07489d98ddd75bf89aff5ecee/topics-and-advance-readings/blockchain-extensions-for-linked-data-signatures.md#json-normalized-clear-text-signatures
+Currently uses chainpoint library to check correctness of merkle proof. We are interested in generalizing to enable other styles, e.g. [Peter Todd's Open Timestamps](https://petertodd.org/2016/opentimestamps-announcement) and [Proof of Publication](https://web-payments.org/specs/source/pop2016/)
 
-## Blockcerts Issuing
+
+## Recipient Strong Claim of Ownership
+
+Embedding the recipient's cryptographic key in the certificate allows the recipient to make a strong claim of ownership (by signing a message). For that reason, we want to include (as an OBI extension) a public key that the recipient owns in the credential. 
+
+In the Blockcerts model, the credential recipient provides their own public key (in advance of issuing) to the issuer. The notion of identity is external to the Blockcerts project; it is assumed (and enforced in various ways in implementations) that the issuer and recipient have a separate means of establishing identity and transferring keys.
+
+Current version has added 'publicKey' and reserved 'id' on the recipient profile object for future expression as a DID
+
+ref: https://opencreds.github.io/vc-data-model/#dfn-identity-profile-model
+
+## Long term questions
+- Anything that is assumed to be hosted (issuer profiles, etc) should have high confidence of permanence (e.g. IPFS hosting)
+- Key rotation?
+- DID
+- Putting recipient in the communication
+
+## Reference
+
+This is a technical summary of the Blockcerts approach, for reference:
+
+### Blockcerts Issuing
 
 - Input is a batch of json-formatted documents (currently content of each is an OBI-compliant badge)
 - For each document:
@@ -57,15 +96,7 @@ The resulting Blockcert contains the original document and the signature/merkle 
 
 Note that the last JSON-LD signature step is unnecessary. Because each document is sha256 hashed and placed into a merkle tree, issued on the blockchain, and the issuer signing key is the one performing the blockchain transaction, the separate signatureValue is actually unnecessary. 
 
-Why we are using blockchain issuing and verification. Source of trusted timestamp (see details)
-
-
-
-## Recipient Strong Claim of Ownershup
-
-We are passionate about a recipient-centric approach, including the recipient's ability to make a strong proof of ownership. For that reason, we want to include (as an OBI extension) a public key that the recipient owns in the credential. Are there any properties in the Identity Profile that would be natural to reuse here, for storing a recipient's public key? Could this be 'creator'?
-
-## Blockcerts Verification
+### Blockcerts Verification
 
 - Fetch blockchain transaction info
 	- issuing address
@@ -90,11 +121,4 @@ Steps:
 	- Open badges standard supplies an expiration date field, which is currently used by verification. See long term notes.
 
 
-Merkle proofs:
-	Currently uses chainpoint library to check correctness of merkle proof. We are interested in generalizing to enable other styles, e.g. [Peter Todd's Open Timestamps](https://petertodd.org/2016/opentimestamps-announcement) and [Proof of Publication](https://web-payments.org/specs/source/pop2016/)
-  
-## Long term questions
-- Anything that is assumed to be hosted (issuer profiles, etc) should have high confidence of permanence (e.g. IPFS hosting)
-- Key rotation?
-- DID
-- Putting recipient in the communication
+https://github.com/blockchain-certificates/cert-schema/issues/28
