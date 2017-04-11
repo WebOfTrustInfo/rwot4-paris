@@ -91,17 +91,17 @@ In addition, we would like to suggest some properties that may be deemed as nece
 ### Open questions for RWoT-Europe 2017 working group
 The Cepa use case lead to the following challenges proposed for consideration by Rebooting-the-Web-of-Trust Working Group: 
 
-1.    Enabling agents to obfuscate their reputational attributes, while ensuring that both the identity of each worker and her reputation history are verifiable
+1.    Enabling agents to obfuscate their reputational attributes, while ensuring that both the identity of each worker and her reputation history are verifiable.
     The core purpose of the system is not to generate reputation ; it is to make it easier for professionals to seek, find and offer valuable help to their peers.
 	Reputation is a by-product, that may prove extremely useful, and extremely sensitive as well. Hence its disclosure shouldn't be imposed by the system. A member should be able to hide or disclose her reputation as she sees fits.	
 	On the other hand, when disclosed to 3rd parties, one's reputation should be (cryptographically) verifiable.
 
-2.    Modelling a web of trust scheme that allows for **verifiable**, **dynamic** and **upgradable** computation of reputation (smart contract architecture)
+2.    Modelling a web of trust scheme that allows for **verifiable**, **dynamic** and **upgradable** computation of reputation (smart contract architecture).
      Verifiability refers to the ability to independently trace the history of signed evaluations that serves as the raw material for computing reputation.
      Dynamic concerns the application of rules for computing reputation, out of past evaluations and according to consensus-based decisions among regulators. For instance, such rules may determine the rate of depreciation of reputation over time, or weight higher evaluations that take place in the same physical location.
      Upgradability relates to the ability to change the rules of the system, including the way rules can be changed. When smart contract are to be used for dynamic processing of reputation, keeping the community of regulators in control of the system requires an instrument for "meta-governance".
 
-3.    Discussing the social acceptability of different forms of evaluation in a professional environment
+3.    Discussing the social acceptability of different forms of evaluation in a professional environment.
 	Decentralized evaluations are not necessarily desirable in every circumstance. While some form of social rating (reddit, Stack Overflow, github, etc) do not seem to raise many objections, some others are highly controversial or induce complex strategies to cheat the system.
 	We would like to discuss how different factors might influence the way evaluation is perceived in the context of a web of trust: formats of evaluation and reputation data, transparence vs. obfuscation of evaluation data, etc.
 
