@@ -1,4 +1,6 @@
-# Blockcerts and Open Badges as Verifiable Claims
+# Blockcerts and Open Badges signature alignment
+
+by Kim Hamilton Duffy (with input from Philipp Schmidt and Nate Otto)
 
 ### Note on terminology
 
@@ -8,40 +10,43 @@ This uses the term "document" to refer to a credential being issued to a recipie
 
 ## Context
 
-[Blockcerts](http://www.blockcerts.org/) is a certification infrastructure that puts recipients in control of their achievements and accomplishments. It consists of open standards and open source libraries enabling blockchain issuing and verification of documents. Blockcerts is [Open Badges](https://openbadgespec.org/) compliant. Blockcerts is working with the Open Badges Initiative (OBI) to contribute blockchain extensions back to the Open Badges standard, enabling blockchain verification for the broader OBI community.
+[Blockcerts](http://www.blockcerts.org/) is a certification infrastructure that puts recipients in control of their achievements and accomplishments. It consists of open standards and open source libraries enabling blockchain issuing and verification of documents. Blockcerts is [Open Badges](https://openbadgespec.org/) compliant, and is working with the Open Badges Initiative (OBI) to contribute blockchain extensions back to the Open Badges standard, enabling blockchain verification for the broader OBI community.
 
-## Why we have not used CA-based PKI approaches, and why we are interested in RWoT
+## Why we have not used CA-based PKI approaches, and why RWoT
 
-Blockcerts uses blockchain, as opposed to traditional PKI techniques, to scalably enable trustless verification. The verification process requires a reliable timestamp at which the transaction occurred. This, combined with public key(s) (with or without expired dates) claimed by the issuer, are used to ensure _the transaction happened at a time when the issuer claimed ownership of the key_. This is essential for: 
+There are 2 aspects to why we have avoided CA-based PKI approaches:
 
-- allowing issuer to rotate keys (in keeping with good security practices), without needing to revoke and re-issue every certificate ever issued.
-- if a key is known to be leaked, valid documents will remain valid, and invalid documents will be flagged (per the expired/revoked date of the key)
+### Scalably enabling trustless verification
+
+Blockcerts uses blockchain, as opposed to traditional PKI techniques, to scalably enable trustless verification. The verification process requires a reliable timestamp at which the transaction occurred. This, combined with public key(s) (with or without expired dates) claimed by the issuer, are used to ensure _the transaction happened at a time when the issuer claimed ownership of the key_. This is essential for alowing issuer rotation of keys without invalidating previously issued, but valid documents. 
 
 With blockchain approaches, the timestamp (and contents) are tamper proof by construction. We considered PKI type approaches, but there are a range of technical and philosophical issues, ranging from needing to rely on a timestamp authority server, trust in the certificate authority, and potential barriers to entry this would impose.
 
+### Integration of decentralized identification approaches in the Blockcerts ecosystem
+
 The Blockcerts project intentionally does not address identity -- participation requires only cryptographic keys. Yet, identity is a critical aspect of a deployed Blockcerts system. And while it will never be part of the Blockcerts core, we are researching best practice approaches for our deployments and as recommendations for the community. 
 
-RWoT's efforts on decentralized identity are well aligned to our goals of enabling open participation and recipient control. 
-
-We are also interested in other efforts promoted by this group:
+RWoT's efforts on decentralized identity are well aligned to our goals of enabling open participation and recipient control. We are also interested in other efforts promoted by this group:
 - Verifiable Claims (and general alignment of OBI with VS data model)
 - JSON-LD signatures
 - Proof of publication
 
 ## Rebooting Web of Trust Spring 2017 Topics (summary)
 
-We propose a small, but feasible subset of topics for Rebooting Web of Trust Spring 2017. This will help kickstart our alignment of Blockcerts' standards and specifications with Verifiable Claim, JSON-LD signatures, etc. These are elaborated in subsequent sections.
+Our near-term goal is to align the Blockcerts/OBI signature formats and standards with those of Verifiable Claim, JSON-LD signatures, etc, specifically:
 
-- Aligning signature schema and techniques, including proof of publication-style Merkle proofs
-- Expressing recipient cryptographic key in the issued document, allowing recipient to make a strong claim of ownership
+- Aligning signature schema and techniques for blockchain-issued documents, including proof of publication-style Merkle proofs
+- Best practices to enable recipients to make a strong claim of ownership over the claim
 
-The following are broader topics that require further elaboration, but any conversation along these lines would be useful. 
+This is a small, but feasible set of topics for Spring 2017 RWoT. Subsequently, we will pursue the following topics (which currently require elaboration).
 
 - Integrating a decentralized identity approach with Blockcerts
 - Longevity of credentials
-- Broader alignment of Open Badges into claims
+- Broader alignment of Open Badges into claims via OBI Endorsement type
 
-## Topic 1: Aligning signature schema and techniques
+## Topic 1: Aligning signature schema and techniques for blockchain-issued documents
+
+### Blockcerts signatures
 
 Blockcerts uses Merkle proofs and JSON-LD signatures for issuing and verification. JSON-LD normalization (canonicalization) is a critical element, used to predictably format a json-formatted input document. 
 
@@ -74,6 +79,8 @@ Blockcerts currently uses Chainpoint V2 merkle receipt format, with plans to ena
 }
 ```
 
+### Problems with JSON-LD signatures for blockchain-issued documents
+
 Some aspects of JSON-LD signatures are not an ideal fit for blockchain verification, which has resulted in some duplication and ambiguity in our schema.  Per VC discussions and [this thread](https://lists.w3.org/Archives/Public/public-credentials/2017Apr/0023.html), there is interest in aligning JSON-LD signatures with JOSE/JWS, but we also have some concerns with this. (Note that, per Manu's email, details are emerging soon, and my concerns may be out of date).
 
 Clarification and generalization of the JSON-LD signature standard (and/or its evolution with JOSE/JWS) would help express blockchain signatures. Some concerns include:
@@ -97,12 +104,13 @@ Other questions
 
 ## Topic 2: Recipient Strong Claim of Ownership
 
-Embedding the recipient's cryptographic key in the document issued on the blockchain allows the recipient to make a strong claim of ownership (by signing a message). For that reason, we plan to include (as an OBI extension) a public key that the recipient owns in the document. 
+In the absence of an existing recipient DID, are there best practices for future proofing a credential via an embedded recipient public key, enabling subsequent mapping of the public key to a DID?
 
-In the Blockcerts model, the credential recipient provides their own public key (in advance of issuing) to the issuer. The notion of identity is external to the Blockcerts project; it is assumed (and enforced in various ways in implementations) that the issuer and recipient have a separate means of establishing identity and transferring keys.
+Because we cannot yet assume existence of DID for recipients, Blockcerts embeds the recipient's cryptographic key in the document issued on the blockchain. This allows the recipient to make a strong claim of ownership (by signing a message). For that reason, we plan to include (as an OBI extension) a public key that the recipient owns in the document. The current Blockcerts schema has added `publicKey` field to a recipient object, and reserved `id` on this object for future expression as a DID.
 
-The current Blockcerts schema has added `publicKey` field to a recipient object, and reserved `id` on this object for future expression as a DID.
+Are there any better approaches?
 
+Note that in the Blockcerts model, the credential recipient provides their own public key (in advance of issuing) to the issuer. As mentioned above, the notion of identity is external to the Blockcerts project. It is assumed (and enforced in various ways in implementations) that the issuer and recipient have a separate means of establishing identity and transferring keys.
 
 ## Reference
 
