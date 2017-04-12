@@ -17,8 +17,8 @@ Our current list of topic papers:
 
    * [Aligning Signature Formats](topics-and-advance-readings/SignatureFormatAlignment.md) by Manu Sporny, Christopher Allen, Jason Law, and Ryan Shea
    * [Blockcerts and Open Badges Signature Alignment](topics-and-advance-readings/BlockcertsAlignment.md) by Kim Hamilton Duffy
-   * [Credit-based Reputations for Identity Management with Blockchain and Flow Networks](RWoT_INSA.pdf) by Tobias Mayer, Obar Hasan, and Lionel Brunie
-   * [Fostering the Resilience of an Ecosystem of Workers through Regulated Decentralized Reputation](Fostering the resilience of an ecosystem of workers through regulated decentralized reputation.md) by Philippe Honigman & Klara Sok
+   * [Credit-based Reputations for Identity Management with Blockchain and Flow Networks](topics-and-advance-readings/RWoT_INSA.pdf) by Tobias Mayer, Obar Hasan, and Lionel Brunie
+   * [Fostering the Resilience of an Ecosystem of Workers through Regulated Decentralized Reputation](topics-and-advance-readings/Fostering the resilience of an ecosystem of workers through regulated decentralized reputation.md) by Philippe Honigman & Klara Sok
    * [Trust for Security and Security for Trust](topics-and-advance-readings/topic_alexopoulos.md) by Nikolaos Alexopoulos
    * [Verifiable Claims and Web of Trust](topics-and-advance-readings/WoTVerifiableClaims.md) by Manu Sporny, Christopher Allen, Joe Andrieu, Matthew Collier, Dave Longley, and Adam Lake
    * [Credit based Reputations for Identity Management with Blockchain and Flow Networks](topics-and-advance-readings/RWoT_INSA.pdf) by Tobias Mayer, Omar Hasan, Lionel Brunie
