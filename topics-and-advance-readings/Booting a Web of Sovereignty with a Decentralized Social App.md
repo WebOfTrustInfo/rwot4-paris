@@ -1,7 +1,7 @@
 # Booting a Web of Sovereignty with a Decentralized Social App
 _By: Adam Lake_
 
-Building and growing a decentralized peer-to-peer (P2P) and self sovereign Web application capable of becoming a prominent social media app might the moonshot project most capable of kickstarting a Web of trust and “redecentralize” the Web. It would not only be an extreme success for a more user-centric social network to scale, but would be a shining example of how we could organize to create alternatives to other tech monopolies as well. Success may be improbable but the upsides are so great that it’s worth the risk. 
+Building and growing a decentralized peer-to-peer (P2P) and self sovereign Web application capable of becoming a prominent social media app might be the moonshot project most suited to kickstarting a Web of trust and “redecentralize” the Web. It would not only be an extreme success for a more user-centric social network to scale, but would be a shining example of how we could organize to create alternatives to other tech monopolies as well. Success may be improbable but the upsides are so great that it’s worth the risk. 
 
 The fullness of “sovereign identity” is not likely to be realized with a single approach to all domains for identity on the Web. P2P social media platform is a good focused use case to discuss self sovereign identity. Perhaps we can arrive at a sovereign identity solution for this single app. 
 
@@ -47,11 +47,11 @@ While some argue that this is a burdensome requirement, that a P2P social media 
 If a user's identifier is a URI then designing for URI migration will increase the chances that the social network persists over time. Because users can migrate their URI’s they are not dependant on a specific URL, a subdomain, or an identifier on a blockchain. Users will be able to migrate from one identifier to another.
 
 **Access Control Lists:**
-The only approach I currently know that might accomplish this is [access control lists](https://sandstorm.io).  dynamic address changing, ID agnostic. It’s a simple but robust idea that each user in the network as a list, or address book, of URI’s for each social contact. The contact URI is a file that can be changed by the user it points to. It would work as follows:
+The only approach I currently know that might accomplish this is [access control lists](https://en.wikipedia.org/wiki/Access_control_list) / dynamic address changing, ID agnostic. It’s a simple but robust idea that each user in the network has a list/address book of URIs, one for each social contact. The contact URI is a file that can be changed by the user it points to. It would work as follows:
 1.    User 1 requests to make a connection with user 2.
 2.    User 2 accepts.
 3.    User 1 and 2 store each others URI in their URI Contact List.
-4.    During the exchange each user is asked if they want to give the other user access to the portion of their contact list where the other users URI is stored. (E.g., User 1 is asked if they want to give User 2 write access to the directory where user 2’s URI is stored on User 1’s URI contact list. And visa versa.
+4.    During the exchange each user is asked if they want to give the other user access to the directory of their contact list where the other users URI is stored. (E.g., User 1 is asked if they want to give User 2 write access to the directory where user 2’s URI is stored on User 1’s URI contact list. And visa versa.
 5.    They both accept and now have the ability to update their URI in all of the Contact Lists that they have been approved to modify. Only those that can prove ownership of the original URI can update all the connected Contact Lists. This is analog to filling out a change of address form, but it happens digitally and almost instantly. 
 ![enter image description here](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/supporting-files/fig1-alake.png?raw=true)
 
