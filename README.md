@@ -17,7 +17,7 @@ Our current list of topic papers:
 
    * [Aligning Signature Formats](topics-and-advance-readings/SignatureFormatAlignment.md) by Manu Sporny, Christopher Allen, Jason Law, and Ryan Shea
    * [Blockcerts and Open Badges Signature Alignment](topics-and-advance-readings/BlockcertsAlignment.md) by Kim Hamilton Duffy
-   * [Booting a Web of Sovereignty with a Facebook Killing Decentralized App](https://docs.google.com/document/d/1tHLYgbaVAfASPuNOY8XO0BL9fMzmoelHEyc0XcV3Exw/edit?usp=sharing) by Adam Lake [Google Docs Link]
+   * [Booting a Web of Sovereignty with a Decentralized Social App](Booting a Web of Sovereignty with a Decentralized Social App.md) by Adam Lake
    * [Credit-based Reputations for Identity Management with Blockchain and Flow Networks](topics-and-advance-readings/RWoT_INSA.pdf) by Tobias Mayer, Obar Hasan, and Lionel Brunie
    * [Fostering the Resilience of an Ecosystem of Workers through Regulated Decentralized Reputation](topics-and-advance-readings/Fostering-resilience.md) by Philippe Honigman & Klara Sok
    * [ID-Blockchain: An Initiative towards Privacy-preserving Blockchain-based Identity](topics-and-advance-readings/id-blockchain.md) by Olivier Maas & Florent Poiron
