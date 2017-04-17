@@ -19,11 +19,12 @@ Our current list of topic papers:
    * [Beyond Identity Cards](topics-and-advance-readings/Beyond-Identity-Cards.pdf) by Joe Andrieu
    * [Blockcerts and Open Badges Signature Alignment](topics-and-advance-readings/BlockcertsAlignment.md) by Kim Hamilton Duffy
    * [Booting a Web of Sovereignty with a Decentralized Social App](topics-and-advance-readings/Booting-a-Web-of-Sovereignty-with-a-Decentralized-Social-App.md) by Adam Lake
-   * [Certificate chains for DID-based self-sovereign identities](topics-and-advance-readings/certificate_chains_dids.md) by Christian Lundkvist
+   * [Certificate Chains for DID-based Self-sovereign Identities](topics-and-advance-readings/certificate_chains_dids.md) by Christian Lundkvist
    * [Credit-based Reputations for Identity Management with Blockchain and Flow Networks](topics-and-advance-readings/RWoT_INSA.pdf) by Tobias Mayer, Obar Hasan, and Lionel Brunie
    * [Fostering the Resilience of an Ecosystem of Workers through Regulated Decentralized Reputation](topics-and-advance-readings/Fostering-resilience.md) by Philippe Honigman & Klara Sok
    * [ID-Blockchain: An Initiative towards Privacy-preserving Blockchain-based Identity](topics-and-advance-readings/id-blockchain.md) by Olivier Maas & Florent Poiron
    * [Project Vouch: A Decentralized Identity Network Based on Public Attestation, Reputation, and Approval of Identity Attributes](topics-and-advance-readings/ProjectVouch_Peer-attestation-and-reputation-based-identity.md) by Angus Champion
+   * [RWoT Proposals and Modern Portable Secure Hardware](topics-and-advance-readings/RWoT_proposals_and_modern_portable_secure_hardware.md) by Nicolas Bacca
    * [Trust for Security and Security for Trust](topics-and-advance-readings/topic_alexopoulos.md) by Nikolaos Alexopoulos
    * [Verifiable Claims and Web of Trust](topics-and-advance-readings/WoTVerifiableClaims.md) by Manu Sporny, Christopher Allen, Joe Andrieu, Matthew Collier, Dave Longley, and Adam Lake
    * [XDI Verifiable Claims and Link Contracts](topics-and-advance-readings/xdi-verifiable-claims-link-contracts.md) by Markus Sabadello
