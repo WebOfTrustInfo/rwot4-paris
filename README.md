@@ -21,6 +21,7 @@ Our current list of topic papers:
    * [Booting a Web of Sovereignty with a Decentralized Social App](topics-and-advance-readings/Booting-a-Web-of-Sovereignty-with-a-Decentralized-Social-App.md) by Adam Lake
    * [Certificate Chains for DID-based Self-sovereign Identities](topics-and-advance-readings/certificate_chains_dids.md) by Christian Lundkvist
    * [Credit-based Reputations for Identity Management with Blockchain and Flow Networks](topics-and-advance-readings/Credit-based-Reputations-for-Identity-Management.md) by Tobias Mayer, Obar Hasan, and Lionel Brunie
+   * [DID Names](topics-and-advance-readings/did-names.md) by Drummond Reed and James Monaghan
    * [Fostering the Resilience of an Ecosystem of Workers through Regulated Decentralized Reputation](topics-and-advance-readings/Fostering-resilience.md) by Philippe Honigman & Klara Sok
    * [ID-Blockchain: An Initiative towards Privacy-preserving Blockchain-based Identity](topics-and-advance-readings/id-blockchain.md) by Olivier Maas & Florent Poiron
    * [The IP Blockchain: Enhancing Global Responsiveness to Infectious Disease Outbreaks](topics-and-advance-readings/RWoT_IPblockchain.md) by Moses Ma, Mark van der Waal, and Net Jacobsson
