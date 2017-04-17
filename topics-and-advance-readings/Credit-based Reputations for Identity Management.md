@@ -26,6 +26,7 @@ We consider a system, where identities are represented by self-contained data (p
 We leverage flow networks to determined circular dependencies and total credits available per identity as illustrated in Figure 1. Blockchain will be used to store provided reputations. Trust management aspects are integrated into the blockchain architectural design and the consensus algorithm (see section implementation possibilities).
 
 ![enter image description here](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/supporting-files/fig1b-tobias.png?raw=true)
+
 _Figure 1: The reputation (R) of each identity is determined by the amount of incoming reputation values that serve as credits (C) for issuing reputations. Here with a limit of 100 credits in the system and I2 being the first node in the system and thus initially owning some credits._
 ## OPEN QUESTIONS
 * What is an identity? A self-contained identity profile is an intuitive approach. However, a distributed approach may be beneficial where a “core identity” (name, address, etc.) is extended by distributed domain- or application-specific identity information.
@@ -43,6 +44,7 @@ _Figure 1: The reputation (R) of each identity is determined by the amount of in
 * Blockchain asset management for trust management operations. The DataCOPP asset management offers multiple asset management operations as shown and maintains identities to some degree (for example, Bitcoin offers CREATE and TRANSFER). This concept can be adapted to support reputation management of (e.g. maintenance of credits).
 
 ![enter image description here](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/supporting-files/fig2b-tobias.png?raw=true)
+
 _Figure 2: DataCOPP asset management operations for the entities of a traceability layer._
 
 * Trust management integration into “deep validation” routines. During the storage process, the deep validation logic performs block validation checks of invalidity conditions on all architectural layers. This may be extended by trust management conditions to prevent storage of illegal reputations (e.g. no storage of circular reputations, spending to many credits than available).
