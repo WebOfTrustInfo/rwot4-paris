@@ -3,22 +3,22 @@ _By: Adam Lake_
 
 Building and growing a decentralized peer-to-peer (P2P) and self sovereign Web application capable of becoming a prominent social media app might be the moonshot project most suited to kickstarting a Web of trust and “redecentralize” the Web. It would not only be an extreme success for a more user-centric social network to scale, but would be a shining example of how we could organize to create alternatives to other tech monopolies as well. Success may be improbable but the upsides are so great that it’s worth the risk. 
 
-The fullness of “sovereign identity” is not likely to be realized with a single approach to all domains for identity on the Web. P2P social media platform is a good focused use case to discuss self sovereign identity. Perhaps we can arrive at a sovereign identity solution for this single app. 
+The fullness of “sovereign identity” is not likely to be realized with a single approach to all domains for identity on the Web. A P2P social media platform is a good focused use case to discuss self sovereign identity. Perhaps we can arrive at a sovereign identity solution for this single app. 
 
-The dominant networking platform is a paper tiger. There is no real value they provide besides the network effect and some software than can be replaced. Replacing the software and growing a network are not at all trivial, but tech monopolies may be far more vulnerable to a mission-driven challenger than one might initially think. There is already an appetite for alternatives and growing wariness around data concentration and mining. 
+The dominant networking platform is a paper tiger. There is no real value they provide besides the network effect and some software that can be replaced. Replacing the software and growing a network are not at all trivial, but tech monopolies may be far more vulnerable to a mission-driven challenger than one might initially think. There is already an appetite for alternatives and growing wariness around data concentration and mining. 
 
 While we can market this project it will only succeed if there are enough people who sufficiency care about the issues this alternative addresses. It is difficult to determine if that critical mass exists. That being said, we have a responsibility to build the technology that embodies these values so we’re ready if and when the required cultural shift takes place. The public may already have the desire but lack the technology and awareness. A user centric P2P platform may grow quickly or very slowly like the Web did at first and then hit a tipping point. One thing we know for sure, it’s not as possible without the proper technology. 
 
 A web of trust also needs organizational models other than the predominant profit-centric model that governs all large tech companies. Whether it be a non-profit foundation, a social benefit corporation, a cooperative, or something else, we need to couple these technologies with organizational models that have symbiotic governing principles.  
 
-I am including business plan elements to hopefully inspire the reader to believe that supplanting social media monopolies with a P2P model is more than remotely possible. However, I would like to focus RWoT time on nailing down the core technical framework for a decentralized self sovereign version social network. 
+I am including business plan elements to hopefully inspire the reader to believe that supplanting social media monopolies with a P2P models is more than remotely possible. However, I would like to focus RWoT time on nailing down the core technical framework for a decentralized self sovereign social network. 
 ### Problems with Social Media Monopolies 
 
 * They engage in comprehensive and growing data collection on billions of users and as they grow, so will central ownership of the social graph and our digital selves.
-* This data allows for exponentially greater manipulation of human beings and their realities than ever seen before. The social media monopolies may or      may not be malicious, but power concentration is always a threat to a free society and centralized systems can more easily be taken over by nefarious actors.
+* This data allows for exponentially greater manipulation of human beings and their realities than ever seen before. The social media monopolies may or may not be malicious, but power concentration is always a threat to a free society and centralized systems can more easily be taken over by nefarious actors.
 * Systemic risk is highest in centralized systems.
 * A prominent tech CEO recently stated in his “Manifesto” that he wants his social network  to essentially create and control the social infrastructure for the entire planet
-* Projecting trends, social media monopolies will become a systemic risk center for free society.
+* Projecting trends, social media monopolies will become a systemic risk center for a free society.
 
 The algorithms that social media monopolies use to populate their newsfeeds are not accessible to the users and so users have no way of knowing the ways in which the information they see is being filtered. These profit-centric corporations have the tools to measure, interpret, and manipulate the political preference of these users.  In the wrong hands this could be used as a massive propaganda machine and to tip elections. It’s inherently a threat to a democratic and free society. 
 ## Solutions
@@ -47,7 +47,7 @@ While some argue that this is a burdensome requirement, that a P2P social media 
 If a user's identifier is a URI then designing for URI migration will increase the chances that the social network persists over time. Because users can migrate their URI’s they are not dependant on a specific URL, a subdomain, or an identifier on a blockchain. Users will be able to migrate from one identifier to another.
 
 **Access Control Lists:**
-The only approach I currently know that might accomplish this is [access control lists](https://en.wikipedia.org/wiki/Access_control_list) / dynamic address changing, ID agnostic. It’s a simple but robust idea that each user in the network has a list/address book of URIs, one for each social contact. The contact URI is a file that can be changed by the user it points to. It would work as follows:
+The only approach I currently know that might accomplish this is [access control lists](https://en.wikipedia.org/wiki/Access_control_list). It’s a simple but robust idea that each user in the network has a list/address book of URIs, one for each social contact. The contact URI is a file that can be changed by the user it points to. It would work as follows:
 1.    User 1 requests to make a connection with user 2.
 2.    User 2 accepts.
 3.    User 1 and 2 store each others URI in their URI Contact List.
@@ -95,7 +95,7 @@ I’ve heard varying quotes with regards to the funding required to build and la
 
 All together now! There are many people and organizations that care about the issues that this project would address. If we can raise the funds and attract the required talent we have a decent chance of succeeding. Some stakeholders that come to mind are Tim Berners-Lee,  Internet Archive, Mozilla, CTA, Web Foundation, national governments (especially outside the US). There are many other stakeholder that may support this effort. 
 
-The technology and capabilities required to pull off a decentralized social network are represented at RWoT of other affiliated meetups. There is great potential in the communities that care about decentralizing the Web, Self Sovereign Identity and the like. This community can produce a compelling decentralized social network . 
+The technology and capabilities required to pull off a decentralized social network are represented at RWoT and other affiliated meetups. There is great potential in the communities that care about decentralizing the Web, Self Sovereign Identity and the like. This community can produce a compelling decentralized social network. 
 ### Questions
 
 * Will a network of servers more quickly aggregate data for a user's feed than a network of devices? 
