@@ -21,6 +21,7 @@ Our current list of topic papers:
    * [Booting a Web of Sovereignty with a Decentralized Social App](topics-and-advance-readings/Booting-a-Web-of-Sovereignty-with-a-Decentralized-Social-App.md) by Adam Lake
    * [Certificate Chains for DID-based Self-sovereign Identities](topics-and-advance-readings/certificate_chains_dids.md) by Christian Lundkvist
    * [Credit-based Reputations for Identity Management with Blockchain and Flow Networks](topics-and-advance-readings/Credit-based-Reputations-for-Identity-Management.md) by Tobias Mayer, Obar Hasan, and Lionel Brunie
+   * [DID Auth](topics-and-advance-readings/did-auth.md) by James Monaghan
    * [DID Names](topics-and-advance-readings/did-names.md) by Drummond Reed and James Monaghan
    * [Fostering the Resilience of an Ecosystem of Workers through Regulated Decentralized Reputation](topics-and-advance-readings/Fostering-resilience.md) by Philippe Honigman & Klara Sok
    * [ID-Blockchain: An Initiative towards Privacy-preserving Blockchain-based Identity](topics-and-advance-readings/id-blockchain.md) by Olivier Maas & Florent Poiron
@@ -30,7 +31,6 @@ Our current list of topic papers:
    * [Trust for Security and Security for Trust](topics-and-advance-readings/topic_alexopoulos.md) by Nikolaos Alexopoulos
    * [Verifiable Claims and Web of Trust](topics-and-advance-readings/WoTVerifiableClaims.md) by Manu Sporny, Christopher Allen, Joe Andrieu, Matthew Collier, Dave Longley, and Adam Lake
    * [XDI Verifiable Claims and Link Contracts](topics-and-advance-readings/xdi-verifiable-claims-link-contracts.md) by Markus Sabadello
-   * [DID Auth](topics-and-advance-readings/did-auth.md) by James Monaghan
    
 ### Other Readings of Interest
 
