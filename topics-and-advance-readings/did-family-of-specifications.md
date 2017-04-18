@@ -1,8 +1,9 @@
-The DID Family of Specifications
+# The DID Family of Specifications
 
-*Drummond Reed, Chief Trust Officer, Evernym & Trustee, Sovrin Foundation2017-04-18, Rebooting the Web of Trust #4, Paris, France*
+*Drummond Reed, Chief Trust Officer, Evernym & Trustee, Sovrin Foundation
+2017-04-18, Rebooting the Web of Trust #4, Paris, France*
 
-**Acknowledgement: **Work on the DID family of specifications has been funded in part by the United States Department of Homeland Security's Science and Technology Directorate under contract HSHQDC-16-R00012-H-SB2016-1-002. The content of these specifications does not necessarily reflect the position or the policy of the U.S. Government and no official endorsement should be inferred. 
+**Acknowledgement:** Work on the DID family of specifications has been funded in part by the United States Department of Homeland Security's Science and Technology Directorate under contract HSHQDC-16-R00012-H-SB2016-1-002. The content of these specifications does not necessarily reflect the position or the policy of the U.S. Government and no official endorsement should be inferred. 
 
 # Introduction
 
@@ -20,7 +21,7 @@ The DID specification solves one critical piece of decentralized public key infr
 
 The DKMS specification will be based on the requirements and best practices set forth in [NIST Special Publication 800-130](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-130.pdf), "A Framework for Designing Key Management System", a 120 page specification with the following abstract:
 
-This Framework for Designing Cryptographic Key Management Systems (CKMS) contains topics that should be considered by a CKMS designer when developing a CKMS design specification. For each topic, there are one or more documentation requirements that need to be addressed by the design specification. Thus, any CKMS that addresses each of these requirements would have a design specification that is compliant with this Framework. 
+>This Framework for Designing Cryptographic Key Management Systems (CKMS) contains topics that should be considered by a CKMS designer when developing a CKMS design specification. For each topic, there are one or more documentation requirements that need to be addressed by the design specification. Thus, any CKMS that addresses each of these requirements would have a design specification that is compliant with this Framework. 
 
 The goal of the DKMS spec is to enable key generation, distribution, rotation, recovery, retirement, and other key management functions to be performed seamlessly and interoperably across a wide range of devices and applications—a lofty goal, but one that must be pursued if adoption of decentralized identity is to break out into the mainstream.
 
