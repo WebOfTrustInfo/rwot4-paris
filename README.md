@@ -28,6 +28,7 @@ Our current list of topic papers:
    * [ID-Blockchain: An Initiative towards Privacy-preserving Blockchain-based Identity](topics-and-advance-readings/id-blockchain.md) by Olivier Maas & Florent Poiron
    * [The IP Blockchain: Enhancing Global Responsiveness to Infectious Disease Outbreaks](topics-and-advance-readings/RWoT_IPblockchain.md) by Moses Ma, Mark van der Waal, and Net Jacobsson
    * [Project Vouch: A Decentralized Identity Network Based on Public Attestation, Reputation, and Approval of Identity Attributes](topics-and-advance-readings/ProjectVouch_Peer-attestation-and-reputation-based-identity.md) by Angus Champion
+   * [Reputation Proofs](topics-and-advance-readings/rep-proofs.md) by Dmitry Khovratovich
    * [RWoT Proposals and Modern Portable Secure Hardware](topics-and-advance-readings/RWoT_proposals_and_modern_portable_secure_hardware.md) by Nicolas Bacca
    * [Self-sovereign Deregulated Identity](topics-and-advance-readings/170418_IDEAS_Paper.pdf) by Pierre Noizat
    * [Trust for Security and Security for Trust](topics-and-advance-readings/topic_alexopoulos.md) by Nikolaos Alexopoulos
