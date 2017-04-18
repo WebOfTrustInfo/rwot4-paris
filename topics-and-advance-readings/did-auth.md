@@ -34,7 +34,7 @@ One could take a similar scheme and apply it to [Sovrin](https://www.sovrin.org/
 
 The recently announced [Blockstack Auth](https://blockstack.org/blog/serverless-sign-in-with-blockstack-auth) offers a glimpse of how the experience might be in the future if we had a more fully decentralized internet which users browsed using identity-aware smart clients.
 
-## Interoperability Uber Alles
+## Independent and Interoperable
 
 If in our haste to fix the centralization and security issues of legacy authentication approaches we force users to deal with a different but equally fragmented set of tools and standards (picture Bitcoin Auth, Blockstack Auth, Sovrin Auth, and so on), then we will have failed as an industry. The greatest advantages of openness and decentralization are realized when interoperability is an explicit requirement.
 
