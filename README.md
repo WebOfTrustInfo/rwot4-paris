@@ -30,6 +30,7 @@ Our current list of topic papers:
    * [Trust for Security and Security for Trust](topics-and-advance-readings/topic_alexopoulos.md) by Nikolaos Alexopoulos
    * [Verifiable Claims and Web of Trust](topics-and-advance-readings/WoTVerifiableClaims.md) by Manu Sporny, Christopher Allen, Joe Andrieu, Matthew Collier, Dave Longley, and Adam Lake
    * [XDI Verifiable Claims and Link Contracts](topics-and-advance-readings/xdi-verifiable-claims-link-contracts.md) by Markus Sabadello
+   * [DID Auth](topics-and-advance-readings/did-auth.md) by James Monaghan
    
 ### Other Readings of Interest
 
