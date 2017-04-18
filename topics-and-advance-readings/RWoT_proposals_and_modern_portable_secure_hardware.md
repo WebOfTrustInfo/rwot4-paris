@@ -1,5 +1,8 @@
 RWoT proposals and modern portable secure hardware
 ===================================================
+Nicolas Bacca, Ledger (nicolas@ledger.fr) - https://ledger.co
+
+RWoT Paris, April 2017
 
 RWoT proposals can involve "non standard" algorithms - this document provides a short history of the secure hardware landscape available today, as well as typical constraints and possible integration strategies to reuse existing solutions with as little modifications as possible and achieve faster user adoption
 
@@ -141,26 +144,50 @@ References
 -----------
 
 **[1]** https://www.pcscworkgroup.com/
+
 **[2]** ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-11
+
 **[3]** http://www.usb.org/developers/docs/devclass_docs/DWG_Smart-Card_CCID_Rev110.pdf
+
 **[4]** https://fidoalliance.org/
+
 **[5]** http://www.usb.org/developers/hidpage/HID1_11.pdf
+
 **[6]** https://github.com/google/u2f-ref-code/tree/master/u2f-chrome-extension
+
 **[7]** https://addons.mozilla.org/en-Us/firefox/addon/u2f-support-add-on/
+
 **[8]** http://www.oracle.com/technetwork/java/embedded/javacard/overview/index.html
+
 **[9]** https://github.com/LedgerHQ/ledger-javacard/blob/master/src-preprocessed/com/ledger/wallet/SHA512.javap
+
 **[10]** https://www.fi.muni.cz/~xsvenda/jcalgtest/
+
 **[11]** https://www.arm.com/products/processors/securcore
+
 **[12]** https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
+
 **[13]** https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
+
 **[14]** https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki
+
 **[15]** https://github.com/LedgerHQ/ledger-node-js-api
+
 **[16]** https://wicg.github.io/webusb/
+
 **[17]** http://globalplatform.github.io/WebApis-for-SE/doc/
+
 **[18]** http://seek-for-android.github.io/
+
 **[19]** https://www.w3.org/TR/webauthn/
+
 **[20]** http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.201-2.pdf
+
 **[21]** ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-15
+
 **[22]** http://www.openmobilealliance.org/tech/affiliates/wap/wap-260-wim-20010712-a.pdf
+
 **[23]** https://fidoalliance.org/wp-content/uploads/White-Paper-Leveraging-FIDO-Standards-to-Extend-the-PKI-Security-Model-in-US-Govt-Agencies.pdf
+
 **[24]** https://github.com/LedgerHQ/android-u2f-bridge
+
