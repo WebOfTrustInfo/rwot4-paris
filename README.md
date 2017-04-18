@@ -23,6 +23,7 @@ Our current list of topic papers:
    * [Credit-based Reputations for Identity Management with Blockchain and Flow Networks](topics-and-advance-readings/Credit-based-Reputations-for-Identity-Management.md) by Tobias Mayer, Obar Hasan, and Lionel Brunie
    * [DID Auth](topics-and-advance-readings/did-auth.md) by James Monaghan
    * [The DID Family of Specifications](topics-and-advance-readings/did-family-of-specifications.md) by Drummond Reed
+   * [DID Method Specifications / BTC1 and PGP1](topics-and-advance-readings/did-methods-btc1-pgp1.md) by Ryan Grant
    * [DID Names](topics-and-advance-readings/did-names.md) by Drummond Reed and James Monaghan
    * [Fostering the Resilience of an Ecosystem of Workers through Regulated Decentralized Reputation](topics-and-advance-readings/Fostering-resilience.md) by Philippe Honigman & Klara Sok
    * [ID-Blockchain: An Initiative towards Privacy-preserving Blockchain-based Identity](topics-and-advance-readings/id-blockchain.md) by Olivier Maas & Florent Poiron
