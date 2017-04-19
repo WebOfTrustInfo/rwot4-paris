@@ -43,7 +43,7 @@ A better approach is to create a standard DID service discovery protocol that ca
 
 A common feature across all blockchain identity initiatives is using ledger-based identity to provide cryptographic authentication of the identity owner. The various protocols all use some form of cryptographic challenge/response similar to the [SQRL protocol](https://en.wikipedia.org/wiki/SQRL) originally proposed by Steve Gibson, i.e., a one-time challenge is issued by the relying party, signed by the identity owner's private key, and then verified by the relying party using the identity owner’s public key. Whereas SQRL uses pairwise public keys that cannot be externally verified, ledger-based identity enables verification of the public key against the ledger.
 
-The purpose of the DID Auth spec is to standardize this cryptographic challenge/response authentication protocol so it can be used with any DID that supports it. DID Auth endpoints would then become one of the standard DID identity services than can be discovered using DID service discovery.
+The purpose of the [DID Auth spec](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/topics-and-advance-readings/did-auth.md) is to standardize this cryptographic challenge/response authentication protocol so it can be used with any DID that supports it. DID Auth endpoints would then become one of the standard DID identity services than can be discovered using DID service discovery.
 
 # DID Names
 
@@ -51,5 +51,5 @@ The DID specification is deliberately limited to machine-generated decentralized
 
 The big difference, of course, is that a DID naming service would be fully decentralized, i.e., it would not have any centralized registries and registrars. Registrations would be made by identity owners directly with the ledger itself using the same cryptographic verification as DID transactions.
 
-The goal of the DID Names specification is to standardize such an interoperable decentralized naming service layer that operates on top of the DID layer. A DID name would be mapped to a DID the same way a DID is mapped to a DDO. DID names would be an optional feature of a DID method, so the governance and economics of a DID namespace must be specified by the community that defines the associated DID method.
+The goal of the [DID Names specification](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/topics-and-advance-readings/did-names.md) is to standardize such an interoperable decentralized naming service layer that operates on top of the DID layer. A DID name would be mapped to a DID the same way a DID is mapped to a DDO. DID names would be an optional feature of a DID method, so the governance and economics of a DID namespace must be specified by the community that defines the associated DID method.
 
