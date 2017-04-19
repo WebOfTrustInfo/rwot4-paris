@@ -1,4 +1,4 @@
-# DID Method Specifications / BTC1 and PGP1
+# DID Method Specifications / BTCR and PGPR
 
 ### Abstract
 
@@ -48,7 +48,7 @@ Now we may turn to the proposed DID methods.
 
 ----
 
-## BTC1 DID Method Specification
+## BTCR DID Method Specification
 
 ### Abstract
 
@@ -56,16 +56,24 @@ This is the DID method specification for a layer-2 protocol using
 the Bitcoin ledger's properties to implement self-sovereign
 identity.  It was initially imagined by Christopher Allen.
 
-This specification covers the BTC1 DID scheme and methods.
+This specification covers the BTCR DID scheme and methods.
 
 In particular, one objective is to explore building the layer on top
 of the Bitcoin protocol without creating many transactions wasting
 OP_RETURN space.  Another objective is to show how key rotation may be
 accomplished.
 
+### See Also
+
+Blockstack.org also secures identities on the Bitcoin blockchain.  They have a [whitepaper](https://blockstack.org/papers).
+
+Several other companies provide identity services anchored in other
+blockchains, with varying degrees of added value through services
+available through the company.
+
 ----
 
-## PGP1 DID Method Specification
+## PGPR DID Method Specification
 
 ### Abstract
 
@@ -75,7 +83,7 @@ read/verify, update, delete/revoke, and resolve as explained in the
 DID spec.
 
 Although it should be possible to deliver a working implementation,
-the primary goal of the PGP1 method specification is pedagogical.  In
+the primary goal of the PGPR method specification is pedagogical.  In
 particular, one objective is to show the difficulties of key rotation
 using PGP, and how the DID spec offers a framework that demands
 improvement.
