@@ -2,21 +2,21 @@
 ## by L. Boldrin  - InfoCert s.p.a.
 
 Many EU countries have in place a national, government supported e-Identity infrastructure (see, e.g. https://www.government.nl/binaries/government/documents/reports/2015/05/13/international-comparison-eid-means/international-comparison-eid-means.pdf for a survey) with some regional differences (see, e.g, http://norden.diva-portal.org/smash/get/diva2:902133/FULLTEXT01.pdf for eID in nordic countries).
-eIDAS Regulation (Regulation EU 910/2014) set up a framework upon which national “identity schemes” should be recognized all around Europe – at least for public services. This poses a set of issues related to the technical and operational implications of this requirement. The current approach, promoted by EU projects like STORK, STORK 2 and by the EU initiative “Connecting Europe Facilities” (CEF - https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/eID) goes through a set of “proxy nodes” disseminated in EU countries, which provide a eID sharing infrastructure. The schema is illustrated by the picture below, for the access to an UK bank from a user from Norway (from:  http://oixuk.org/wp-content/uploads/2017/01/Alpha-Digital-Identity-Across-Borders-FINAL-December-2016.pdf)
 
+eIDAS Regulation (Regulation EU 910/2014) set up a framework upon which national “identity schemes” should be recognized all around Europe – at least for public services. This poses a set of issues related to the technical and operational implications of this requirement. The current approach, promoted by EU projects like STORK, STORK 2 and by the EU initiative “Connecting Europe Facilities” (CEF - https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/eID) goes through a set of “proxy nodes” disseminated in EU countries, which provide a eID sharing infrastructure. The schema is illustrated by the picture below, for the access to an UK bank from a user from Norway (from:  http://oixuk.org/wp-content/uploads/2017/01/Alpha-Digital-Identity-Across-Borders-FINAL-December-2016.pdf)
 
 The complete picture is presented in  https://ec.europa.eu/cefdigital/wiki/download/attachments/23003182/JS4%20Building%20Block%20DSI_IntroDocument%20%28eID%29-v1.05.pdf?version=1&modificationDate=1490615634087&api=v2, which provides some more detail on the eIDAS nodes and the flows they implement.
  
 While the concept proved to work, there are many concerns as to the practical scalability of this approach as well as its possible adoption by the commercial sector.  One of the major issues is the absence of useful identifiers – an identifier is included among the core set of attributes transported by the eIDAS infrastructure (see https://ec.europa.eu/futurium/en/system/files/ged/celex_32015r1501_en_txt.pdf) but it is is specific to the country of origin: 
 The unique identifier consists of: 
 
-   1. The first part is the Nationality Code of the identifier 
+   1. The first part is the Nationality Code of the identifier. 
 This is one of the ISO 3166-1 alpha-2 codes, followed by a slash (“/“)) 
 
-   2. The second part is the Nationality Code of the destination country or international organization1 
+   2. The second part is the Nationality Code of the destination country or international organization.
 This is one of the ISO 3166-1 alpha-2 codes, followed by a slash (“/“) 
 
-   3. The third part a combination of readable characters 
+   3. The third part a combination of readable characters.
 This uniquely identifies the identity asserted in the country of origin but does not necessarily reveal any discernible correspondence with the subject's actual identifier (for example, username, fiscal number etc) 
 
 Example: ES/AT/02635542Y (Spanish eIDNumber for an Austrian SP)
