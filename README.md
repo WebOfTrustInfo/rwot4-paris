@@ -25,6 +25,7 @@ Our current list of topic papers:
    * [The DID Family of Specifications](topics-and-advance-readings/did-family-of-specifications.md) by Drummond Reed
    * [DID Method Specifications / BTCR and PGPR](topics-and-advance-readings/did-methods-btcr-pgpr.md) by Ryan Grant
    * [DID Names](topics-and-advance-readings/did-names.md) by Drummond Reed and James Monaghan
+   * [DKMS—Decentralized Key Management System](topics-and-advance-readings/dkms-decentralized-key-mgmt-system.md) by Drummond Reed
    * [Fostering the Resilience of an Ecosystem of Workers through Regulated Decentralized Reputation](topics-and-advance-readings/Fostering-resilience.md) by Philippe Honigman & Klara Sok
    * [ID-Blockchain: An Initiative towards Privacy-preserving Blockchain-based Identity](topics-and-advance-readings/id-blockchain.md) by Olivier Maas & Florent Poiron
    * [The IP Blockchain: Enhancing Global Responsiveness to Infectious Disease Outbreaks](topics-and-advance-readings/RWoT_IPblockchain.md) by Moses Ma, Mark van der Waal, and Net Jacobsson
