@@ -34,7 +34,7 @@ Our current list of topic papers:
    * [Reputation Proofs](topics-and-advance-readings/rep-proofs.md) by Dmitry Khovratovich
    * [RWoT Proposals and Modern Portable Secure Hardware](topics-and-advance-readings/RWoT_proposals_and_modern_portable_secure_hardware.md) by Nicolas Bacca
    * [Self-sovereign Deregulated Identity](topics-and-advance-readings/170418_IDEAS_Paper.pdf) by Pierre Noizat
-   * [Towards a User-centered Web of Trust](Towards-a-user-centered-web-of-trust.md) by Fabien Petitcolas & Paul Dunphy
+   * [Towards a User-centered Web of Trust](topics-and-advance-readings/Towards-a-user-centered-web-of-trust.md) by Fabien Petitcolas & Paul Dunphy
    * [Trust for Security and Security for Trust](topics-and-advance-readings/topic_alexopoulos.md) by Nikolaos Alexopoulos
    * [Verifiable Claims and Web of Trust](topics-and-advance-readings/WoTVerifiableClaims.md) by Manu Sporny, Christopher Allen, Joe Andrieu, Matthew Collier, Dave Longley, and Adam Lake
    * [XDI Verifiable Claims and Link Contracts](topics-and-advance-readings/xdi-verifiable-claims-link-contracts.md) by Markus Sabadello
