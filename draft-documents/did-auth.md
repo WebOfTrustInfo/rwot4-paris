@@ -14,23 +14,39 @@ Here's how you authenticate between a client and server by proving control over 
 
 # Use Cases
 
-Scenario | Logging in with | Authentication Client | Challenge Channel | Notes
-1 | web browser | same browser | same browser | The user is accessing some content with a web browser, and authenticating themselves using the same browser
-2 | web browser | mobile browser | mobile browser | The user is accessing some content with a web browser (most likely a laptop or tablet), and authenticating themselves using a browser on a separate device (most likely their mobile phone) - orchestrating that is the user's responsibility
-3 | web browser | mobile app | mobile app | The user is accessing some content with a web browser, and is authenticating themselves using an app on their mobile device - orchestrating that is the user's responsibility
-4 | mobile app | mobile app | mobile app | The user is accessing some content with an app, and is authenticating themselves using a different app - orchestrated via inter-app messaging
-5 | web browser | same browser | Challenge Endpoint (in DDO) | Not sure what this one is?
-6 | mobile app | Challenge Endpoint | Challenge Endpoint (in DDO) | The user is accessing some content with a web browser, and is authenticating themselves using a client (probably a mobile app) which is connected to the Challenge Endpoint
+<table>
+<tr>
+<td> Scenario </td><td> Logging in with </td><td> Authentication Client </td><td> Challenge Channel </td><td> Notes </td>
+</tr><tr>
+<td> 1 </td><td> web browser </td><td> same browser </td><td> same browser </td><td> The user is accessing some content with a web browser, and authenticating themselves using the same browser </td>
+</tr><tr>
+<td> 2 </td><td> web browser </td><td> mobile browser </td><td> mobile browser </td><td> The user is accessing some content with a web browser (most likely a laptop or tablet), and authenticating themselves using a browser on a separate device (most likely their mobile phone) - orchestrating that is the user's responsibility </td>
+</tr><tr>
+<td> 3 </td><td> web browser </td><td> mobile app </td><td> mobile app </td><td> The user is accessing some content with a web browser, and is authenticating themselves using an app on their mobile device - orchestrating that is the user's responsibility </td>
+</tr><tr>
+<td> 4 </td><td> mobile app </td><td> mobile app </td><td> mobile app </td><td> The user is accessing some content with an app, and is authenticating themselves using a different app - orchestrated via inter-app messaging </td>
+</tr><tr>
+<td> 5 </td><td> web browser </td><td> same browser </td><td> Challenge Endpoint (in DDO) </td><td> Not sure what this one is? </td>
+</tr><tr>
+<td> 6 </td><td> mobile app </td><td> Challenge Endpoint </td><td> Challenge Endpoint (in DDO) </td><td> The user is accessing some content with a web browser, and is authenticating themselves using a client (probably a mobile app) which is connected to the Challenge Endpoint </td>
+</tr>
+</table>
 
 ## Flow 1
 
 ![flow-1](../supporting-files/did-auth-flow-1.jpg)
+
+## Flow 2
 
 ## Flow 3
 
 ![flow-3](../supporting-files/did-auth-flow-3.jpg)
 
 Orchestration (steps 6 & 8) may involve scanning a QR code, communication via Bluetooth, etc.
+
+## Flow 4
+
+## Flow 5
 
 ## Flow 6
 
