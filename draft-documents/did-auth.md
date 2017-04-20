@@ -113,3 +113,9 @@ These are payload requirements, to be augmented with examples:
   * Use a trademark to drive conformance (avoid OpenID "issues")
 * Want to avoid "NASCAR syndrome" with login buttons
   * Can the Content Server be aware of the authentication methods available to the user so it can display appropriate options? This has privacy implications.
+* Should collect a list of apps from the RWOT community which have implemented flows _similar_ to this, and ask them to pledge compliance:
+  * Digital Bazaar / Authorization.io 
+  * uPort
+  * Evernym
+  * Dappre
+  * Consent?
