@@ -5,7 +5,7 @@
 ### What do did:**btcr** and did:**pgpr** stand for?
 
 <dl>
-  <dt>did:<b>btcr<b>:</dt>
+  <dt>did:<b>btcr</b>:</dt>
   <dd>*Reference* Decentralized Identifier Method for the Bitcoin Blockchain.</dd>
 
   <dt>did:<b>pgpr</b>:</dt>
