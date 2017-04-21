@@ -14,6 +14,18 @@ Here's how you authenticate between a client and server by proving control over 
 
 # Use Cases
 
+## Two-Step
+
+### Registration
+
+TODO: includes making a connection?
+
+### Authentication
+
+## One-Step
+
+## Device Configurations
+
 <table>
 <tr>
 <td> Scenario </td><td> Logging in with </td><td> Authentication Client </td><td> Challenge Channel </td><td> Notes </td>
@@ -64,7 +76,7 @@ This assumes the Content Server is already aware of the DID (or it is communicat
 
 # Payload Example
 
-These are payload requirements, to be augmented with examples:
+These are protocol feature requirements, to be augmented with examples:
 
 ## Challenge
 
@@ -91,19 +103,23 @@ These are payload requirements, to be augmented with examples:
 
 # Protocol Diagrams
 
+# Multi-Device Orchestration
+
+TODO: at least a way to use QR codes to link a browser session to a mobile device
+
+# Standards Alignment
+
+TODO:
+* Web auth / FIDO / JWT/JWS
+* DID spec / DID service discovery
 
 # Notes & Further Issues
 
 * Need to show the enrolment/registration flow as well as the login/authentication flow
 * How to detect the context (is this an in-band or out-of-band authentication)?
-* How to support multi-device orchestration (specify a QR code scheme as a minimum)?
-* What level of alignment is needed with DID Service Discovery (for now can we agree on a well-known URI scheme to use for sending challenges)?
-* Need to be explicit about alignment to other standards
-  * Web auth / FIDO
-  * uPort uses JWT - challenge & claim live in the payload
 * Need to account for delays in the protocol (poor connectivity, need for MFA, etc)
-* **Need to reconcile with mutual authentication flows (where establishing a connection is required)**
 * Need to call out the privacy implications of using timestamps for nonces
+* Heard lots of good ideas on Thursday for making sure this is useful for more than just websites - need to capture that
 
 ## Driving Adoption
 
@@ -118,4 +134,5 @@ These are payload requirements, to be augmented with examples:
   * uPort
   * Evernym
   * Dappre
+  * Aevatar
   * Consent?
