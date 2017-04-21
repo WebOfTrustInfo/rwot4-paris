@@ -109,3 +109,11 @@ if(options.algorithm === 'RsaSignature2017') {
 	signature = b64UrlEncodedHeader + ".." + base64Signature;
 }
 ```
+
+## Prototypes
+
+
+Implementations of LD JWS signing
+
+- Node.js: https://github.com/blockchain-certificates/jsonld-signatures (this is a fork of LD signature official library)
+- Python: https://github.com/blockchain-certificates/ld-koblitz-signatures/tree/ld-jws
