@@ -6,13 +6,7 @@ By Kim Hamilton Duffy, Rodolphe Marques, Markus Sabadello
 
 This describes how we adapted LD signatures to the proposed [RSA Signature Suite 2017](https://w3c-dvcg.github.io/lds-rsa2017/) specification, which uses JOSE JWS. This assumes familiarity with LD signatures, and focuses on the specific changes to the algorithm to generate RSA Signature Suite 2017 signatures.
 
-Our biggest obstacle was lack of JWS library support for detached headers. For this reason, we couldn't directly use any JWS libraries; instead we implemented the steps directly, which the rest of this document clarifies.
-
-We propose that these steps be broken out into simple JWS detached signature libraries, which JSON-LD signatures can use a simple API like the following, where payload is assumed to be a detached payload, as described in [RFC 7797](https://tools.ietf.org/html/rfc7797)
-
-```
-signature = sign(headers: JSON, payload: STRING);
-```
+Note that many of these steps should be performed by a detached payload aware JWS library.
 
 ## Steps, Overview
 
