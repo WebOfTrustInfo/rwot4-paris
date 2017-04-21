@@ -32,7 +32,7 @@ two methods:
 There is [an
 infographic](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/event-documents/photos/btcr-infographic-20170421.jpg)
 showing how the general scheme is implemented in Bitcoin
-transactions.
+transactions: ![alt text](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/event-documents/photos/btcr-infographic-20170421.jpg)
 
 We discovered a way to indicate signing keys separate from the control key
 (using two nSequence bits).
