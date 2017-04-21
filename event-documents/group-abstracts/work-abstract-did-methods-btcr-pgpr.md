@@ -37,9 +37,6 @@ transactions: ![alt text](https://github.com/WebOfTrustInfo/rebooting-the-web-of
 We discovered a way to indicate signing keys separate from the control key
 (using two nSequence bits).
 
-[rgrant 20170421 15:35 CEST] current state of colored coins
-https://github.com/Colored-Coins/Colored-Coins-Protocol-Specification/wiki
-
 ### Work on did:pgpr
 
 The specification was completely deferred.
