@@ -1,6 +1,16 @@
-# Method Specification Work for did:btcr and did:pgpr
+# Method Specification Work for did:**btcr** and did:**pgpr**
 
 ## Summary of conference progress and future plans
+
+### What do did:**btcr** and did:**pgpr** stand for?
+
+<dl>
+  <dt>did:**btcr**:</dt>
+  <dd>*Reference* Decentralized Identifier Method for the Bitcoin Blockchain.</dd>
+
+  <dt>did:**pgpr**:</dt>
+  <dd>*Reference* Decentralized Identifier Method for [Pretty Good Privacy](https://en.wikipedia.org/wiki/Pretty_Good_Privacy)</dd>
+</dl>
 
 ### Review of Discussion
 
@@ -41,6 +51,11 @@ We discovered a way to indicate signing keys separate from the control key
 
 The specification was completely deferred.
 
-One did:pgpr discussion revolved around the semantics of PGP
-signature rotation as the closest parallel to did:btcr key
-rotation.
+One did:pgpr discussion revolved around unplanned loss of a master
+key, with the semantics of PGP signature rotation (requiring creating
+a new fingerprint and gathering new trust signatures) as the closest
+parallel to did:btcr key rotation (where a quorum of cold storage
+control keys may be marshalled to prevent revocation of the did:btcr).
+Since the purpose of the did:pgpr method specification is primarilly
+pedagogical, this technique will be described in the method
+specification without judgement.
