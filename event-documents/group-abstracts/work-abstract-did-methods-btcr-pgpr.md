@@ -5,11 +5,11 @@
 ### What do did:**btcr** and did:**pgpr** stand for?
 
 <dl>
-  <dt>did:**btcr**:</dt>
+  <dt>did:<b>btcr<b>:</dt>
   <dd>*Reference* Decentralized Identifier Method for the Bitcoin Blockchain.</dd>
 
-  <dt>did:**pgpr**:</dt>
-  <dd>*Reference* Decentralized Identifier Method for [Pretty Good Privacy](https://en.wikipedia.org/wiki/Pretty_Good_Privacy)</dd>
+  <dt>did:<b>pgpr</b>:</dt>
+  <dd><i>Reference</i> Decentralized Identifier Method for [Pretty Good Privacy](https://en.wikipedia.org/wiki/Pretty_Good_Privacy)</dd>
 </dl>
 
 ### Review of Discussion
