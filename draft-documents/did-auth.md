@@ -6,7 +6,7 @@
 # Introduction
 
 Quick summary of the points from the [topic paper](../topics-and-advance-readings/did-auth.md):
-* Everyone's doing "blockchain auth". We want to standardise on DIDs. We should therefore be doing DID Auth.
+* Everyone's doing "blockchain auth" already. We want to standardise on DIDs, and we need interoperability on authentication before we can hope to have interoperability on exchanging verifiable claims and other more sophisticated transactions. We should therefore be doing DID Auth.
 * Here's how you authenticate between a client and server by proving control over a DID.
 
 ![did-auth](../supporting-files/did-auth.jpg)
@@ -116,9 +116,10 @@ TODO: at least a way to use QR codes to link a browser session to a mobile devic
 
 # Standards Alignment
 
-TODO explain alignment with (and improvements over) other standards:
+TODO explain alignment with (and improvements over) other standards (and non-standard implementations):
 * Web auth / FIDO / JWT/JWS
 * DID spec / DID service discovery
+* (SQRL, BitID, etc)
 
 # Notes & Further Issues
 
