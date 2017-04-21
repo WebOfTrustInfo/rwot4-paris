@@ -6,7 +6,7 @@
 
 <dl>
   <dt>did:<b>btcr</b>:</dt>
-  <dd>*Reference* Decentralized Identifier Method for the Bitcoin Blockchain.</dd>
+  <dd><i>Reference</i> Decentralized Identifier Method for the Bitcoin Blockchain.</dd>
 
   <dt>did:<b>pgpr</b>:</dt>
   <dd><i>Reference</i> Decentralized Identifier Method for [Pretty Good Privacy](https://en.wikipedia.org/wiki/Pretty_Good_Privacy)</dd>
