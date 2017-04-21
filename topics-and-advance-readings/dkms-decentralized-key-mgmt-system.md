@@ -51,4 +51,4 @@ Apps communicate with each other—and often with the ledger layer—via the age
 
 # Next Steps
 
-Work on the DKMS specification is being coordinated by [Evernym](http://www.evernym.com) under a grant from by the U.S. Department of Homeland Security. The specification will be based on [NIST Special Publication 800-130: A Framework for Cryptographic Key Management Systems](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-130.pdf). Interested contributors are invited to contact the authors via the [Sovrin Forum](http://forum.sovrin.org/).
+Work by Evernym on the DKMS specification is funded by the U.S. Department of Homeland Security Science & Technology Directorate (DHS S&T). Any opinions contained herein are those of Evernym and do not necessarily reflect those of DHS S&T. The specification will be based on [NIST Special Publication 800-130: A Framework for Cryptographic Key Management Systems](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-130.pdf). Interested contributors are invited to contact the authors via the [Sovrin Forum](http://forum.sovrin.org/).
