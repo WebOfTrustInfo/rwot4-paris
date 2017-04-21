@@ -1,3 +1,8 @@
+# DID Auth Overview
+
+* James Monaghan, Evernym
+* Manu Sporny, Digital Bazaar
+
 # Introduction
 
 Quick summary of the points from the [topic paper](../topics-and-advance-readings/did-auth.md):
