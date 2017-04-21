@@ -9,7 +9,7 @@
   <dd><i>Reference</i> Decentralized Identifier Method for the Bitcoin Blockchain.</dd>
 
   <dt>did:<b>pgpr</b>:</dt>
-  <dd><i>Reference</i> Decentralized Identifier Method for [Pretty Good Privacy](https://en.wikipedia.org/wiki/Pretty_Good_Privacy)</dd>
+  <dd><i>Reference</i> Decentralized Identifier Method for <a href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy">Pretty Good Privacy</a></dd>
 </dl>
 
 ### Review of Discussion
