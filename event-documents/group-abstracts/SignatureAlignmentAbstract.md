@@ -27,11 +27,11 @@ The major obstacle we encountered while performing this work was the lack of JSO
 - Python: https://github.com/blockchain-certificates/ld-koblitz-signatures/tree/ld-jws
 - Java: https://github.com/WebOfTrustInfo/ld-signatures-java
 
-### LD JWS Implementation Guidance (cross-platform)
+### JSON-LD JWS Implementation Guidance (cross-platform)
 
 We created a whitepaper to describe the precise differences between existing LD signatures and the new approach.
 
-- [[SignatureAlignmentImplementation.md]]
+- [Signature Alignment Implementation](SignatureAlignmentImplementation.md)
 
 ## Next steps
 
