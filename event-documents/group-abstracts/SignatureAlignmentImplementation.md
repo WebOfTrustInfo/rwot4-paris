@@ -56,17 +56,16 @@ Note this test uses the `{"alg":"RS256","b64":false,"crit":["b64"]}` header and 
 The input of the signing function should match `eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19.$.02`
 and the resulting signature should match `eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..fZRkjTTrcXdUovHjghM6JvlMhJuR1s8X1F4Uy_F4oMhZ9KtF2Zp78lYSOI7OxB5uoTu8FpQHvy-dz3N4nLhoSWAi2_HrxZG_2DyctUUB_8pRKYBmIdIgpOlEMjIreOvXyM6A32gR-PdbzoQq14yQbbfxk12jyZSwcaNu29gXnW_uO7ku1GSV_juWE5E_yIstvEB1GG8ApUGIuzRJDrAAa8KBkHN7Rdfhc8rJMOeSZI0dc_A-Y7t0M0RtrgvV_FhzM40K1pwr1YUZ5y1N4QV13M5u5qJ_lBK40WtWYL5MbJ58Qqk_-Q8l1dp6OCmoMvwdc7FmMsPigmyklqo46uyjjw`
 
-Currently the code is able to construct the correct unencoded payload from the headers and the json-ld document and produce a correct signature.
+Our prototypes successfully matched this testcase, and matched results on JSON-LD claim inputs.
 
 
-## Creating JSON-LD signatures with JSON-LD RSA Signature Suite 2017
+## Creating JSON-LD signatures with JSON-LD RSA 2017 Signature Suite
 
 ### Overview
 
-We start with a JSON-LD document and we want to produce JSON Web Signature:
+Starting with a JSON-LD document, we want to produce a JSON Web Signature:
 
-1. Normalize the JSON-LD with the URDNA2015 algorithm (not sure if this is
-   correct)
+1. Normalize the JSON-LD with the URDNA2015 algorithm (now called GCA2015)
 2. SHA256 hash the normalized JSON-LD
 3. Use the hash as the input for JWS signature with the header `{"alg":"RS256","b64":false,"crit":["b64"]}`
 4. Create a new key `signatureValue` in the JSON-LD document and use the
@@ -76,27 +75,27 @@ We start with a JSON-LD document and we want to produce JSON Web Signature:
 
 This describes the detailed signing steps, including processing due to lack of JWS library support for detached payloads.
 
-The signing flow follows that of the [JSON-LD signature library](https://github.com/digitalbazaar/jsonld-signatures), and the only modifications required are in the `createSignature` function. A new algorithm, `RsaSignature2017`, was added to implement this signature suite.
+The signing flow is identical to other signature suites in the [JSON-LD signature library](https://github.com/digitalbazaar/jsonld-signatures); the only modifications required are in the `createSignature` function. A new algorithm, `RsaSignature2017`, was added to implement this signature suite.
 
 **Note** A proper implementation would recraft these steps as a JWS detached signature library, as opposed to including these steps in a JSON-LD signature library.
 
 Inputs:
 
-- JSON-LD headers (nonce, created, creator, ...) same as before, but algorithm should be `RsaSignature2017` 
+- JSON-LD headers (nonce, created, creator, ...) same as before. Algorithm should be `RsaSignature2017` 
 - JSON-LD document
 
 JSON-LD Signing Algorithm:
 
 - ensure algorithm is in accepted set
 - add 'created' date of now, if not supplied
-- canonicalize using the `GCA2015` algorithm, formerly known as `URDNA2015`
+- canonicalize using the `GCA2015` algorithm (formerly`URDNA2015`)
 - **Perform RSA Signature Suite 2017 signing**
 - compact the signature
 - return the JSON-LD document with the signature block added
 
 ### RSA Signature Suite 2017 signatures
 
-**Note/TODO** Our prototypes omit the call to `_getDataToHash`, which prefixes the JSON-LD normalized document with the sorted header key/values `created`, `domain`, and `nonce` (all that are supplied). We will follow up on this.
+**Note/TODO** Our prototypes omit the call to `_getDataToHash`, which prefixes the JSON-LD normalized document with the sorted header key/values `created`, `domain`, and `nonce` (all that are supplied). We need to decide whether to use that approach, or to rely on JWS headers (if protected headers, they are part of the signed payload)
 
 This approach uses JOSE JWS detached payload signing, as described in [RFC 7797](https://tools.ietf.org/html/rfc7797). The JWS headers to use are:
 
@@ -190,6 +189,7 @@ b'{"alg":"RS256","b64":false,"crit":["b64"]}'
 The only modifications are:
 - Add new algorithm `RsaSignature2017`
 - Add new path to `_createSignature` to support `RsaSignature2017`
+- TBD additional JSON-LD headers (nonce, created, creator, ...)
 
 ```
 if(options.algorithm === 'RsaSignature2017') {
@@ -224,4 +224,4 @@ if(options.algorithm === 'RsaSignature2017') {
 }
 ```
 
-**Note** Again, most of these steps should be pulled into a JWS detached signature library.
+**Reminder** These steps should not be implemented directly in the JSON-LD signatures library; instead they should be refactored into a JWS detached payload library.
