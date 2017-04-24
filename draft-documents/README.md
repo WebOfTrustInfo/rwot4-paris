@@ -6,8 +6,8 @@ This is a listing of all the papers, specs, or other works in progress from Rebo
 
 | **Paper** | **Contact** | **Link** | **Abstract** | **Status** | 
 |-----------|----------|----------|--------------|------------|
-| (4) DID Method Specs | rgrant | | [Abstract](group-abstracts/work-abstract-did-methods-btcr-pgpr.md) | Abstract |
-| (6) Decentralized Reputation Systems | Angus Champion de Crespigny | | [Abstract](group-abstracts/DesignConsiderationsOfDecentralizedReputationSystems_Abstract.md) | Abstract |
-| (7) LD Signature Alignment | Kim Hamilton | [JSON Paper](group-abstracts/SignatureAlignmentImplementation.md) | [Abstract](group-abstracts/SignatureAlignmentAbstract.md) | Draft |
+| (4) DID Method Specs | rgrant | | [Abstract](../event-documents/group-abstracts/work-abstract-did-methods-btcr-pgpr.md) | Abstract |
+| (6) Decentralized Reputation Systems | Angus Champion de Crespigny | | [Abstract](../event-documents/group-abstracts/DesignConsiderationsOfDecentralizedReputationSystems_Abstract.md) | Abstract |
+| (7) LD Signature Alignment | Kim Hamilton | [JSON Paper](../event-documents/group-abstracts/SignatureAlignmentImplementation.md) | [Abstract](../event-documents/group-abstracts/SignatureAlignmentAbstract.md) | Draft |
 
-_Numbering is based on [the Topic Recap recording](event-documents/graphic-recording/Topic%20Recap.jpg) solely to maintain consistency in keeping track of everything._
+_Numbering is based on [the Topic Recap recording](../event-documents/graphic-recording/Topic%20Recap.jpg) solely to maintain consistency in keeping track of everything._
