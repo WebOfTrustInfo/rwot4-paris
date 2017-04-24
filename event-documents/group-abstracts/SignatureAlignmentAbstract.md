@@ -4,18 +4,18 @@ By Kim Hamilton Duffy, Rodolphe Marques, Markus Sabadello
 
 ## Abstract
 
-The goal was to provide an implementation of JSON-LD signatures in which the `signatureValue` field is replaced with a JSON Web Signature as described in the proposed [RSA Signature Suite 2017](https://w3c-dvcg.github.io/lds-rsa2017/) spec. 
+Our goal was to provide working prototypes of the proposed [RSA Signature Suite 2017](https://w3c-dvcg.github.io/lds-rsa2017/) spec to answer two questions. First, is the spec sufficiently clear for implementors? Second, what is the impact to existing JSON-LD signature implementations?
 
-Current implementors of JSON-LD signatures have concerns about the impact/feasibility of JSON Web Signatures, as described in [Aligning Signature Formats](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/topics-and-advance-readings/SignatureFormatAlignment.md). This working group aimed to investigate/derisk these concerns, as follows:
+Existing implementors of JSON-LD signatures expressed concerns about the impact/feasibility of JSON Web Signatures, as described in [Aligning Signature Formats](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/topics-and-advance-readings/SignatureFormatAlignment.md). This working group aimed to investigate/derisk these concerns, as follows:
+
 - Develop prototypes in several key languages, to ensure library support
 - Ensure minimal impact on usability of Verifiable Claims and JSON-LD signatures
-- Ensure no ambiguities in the proposed specification
 
 Note that the only algorithm supported by RSA Signature Suite 2017 is __RS256__ -- a subset of the [JSON Web Signature Unencoded Payload Option RFC 7797](https://datatracker.ietf.org/doc/html/rfc7797).
 
 ## Status
 
-We delivered prototypes of the new RSA Signature Suite 2017 in 3 languages: javascript, python, and java. These are not complete or production-ready code, but they suffice to move forward with the proposed aligned signature approach.
+We delivered prototypes of the new RSA Signature Suite 2017 that provided sufficient confidence to move forward with the proposed aligned signature approach.
 
 We verified that the impact to existing JSON-LD signature implementations -- and usability in general -- was minimal. Specifically, the RSA Signature Suite 2017 avoids the requirement of preserving the original binary form of the payload.
 
@@ -23,7 +23,7 @@ The major obstacle we encountered while performing this work was the lack of JSO
 
 ### Implementations of LD JWS signing
 
-- Node.js: https://github.com/blockchain-certificates/jsonld-signatures (this is a fork of LD signature official library)
+- Javascript/Node.js: https://github.com/WebOfTrustInfo/jsonld-signatures (this is a fork of JSON-LD signatures official library)
 - Python: https://github.com/blockchain-certificates/ld-koblitz-signatures/tree/ld-jws
 - Java: https://github.com/WebOfTrustInfo/ld-signatures-java
 
