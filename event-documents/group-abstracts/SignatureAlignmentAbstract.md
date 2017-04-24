@@ -4,7 +4,7 @@ By Kim Hamilton Duffy, Rodolphe Marques, Markus Sabadello
 
 ## Abstract
 
-Our goal was to provide working prototypes of the proposed [RSA Signature Suite 2017](https://w3c-dvcg.github.io/lds-rsa2017/) spec to answer two questions. First, is the spec sufficiently clear for implementors? Second, what is the impact to existing JSON-LD signature implementations?
+Our goal was to develop working prototypes of the proposed [RSA Signature Suite 2017](https://w3c-dvcg.github.io/lds-rsa2017/) spec to answer two questions. First, is the spec sufficiently clear for implementors? Second, what is the impact to existing JSON-LD signature implementations?
 
 Existing implementors of JSON-LD signatures expressed concerns about the impact/feasibility of JSON Web Signatures, as described in [Aligning Signature Formats](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/topics-and-advance-readings/SignatureFormatAlignment.md). This working group aimed to investigate/derisk these concerns, as follows:
 
@@ -35,12 +35,11 @@ We created a whitepaper to describe the precise differences between existing LD 
 
 ## Next steps
 
-Because the primary gap was lack of JWS detached signature support -- and therefore accounted for most of our development work -- we propose to recraft the prototypes as JWS detached signature libraries. Such a library would expose the following simple sign/verify APIs:
+Because the primary gap was lack of JWS detached payload support -- and therefore accounted for most of our development work -- we propose to recraft the prototypes as JWS detached signature libraries. Such a library would expose simple sign and verify APIs, for example:
 
 ```
 signature = sign(headers: JSON, payload: STRING);
 
-# TODO: verify
 ```
 
 Where payload is assumed to be a detached payload, as described in [RFC 7797](https://tools.ietf.org/html/rfc7797)
@@ -49,11 +48,11 @@ Such a library would facilitate minimal changes to existing JSON-LD signature im
 
 Detailed list of next steps:
 
-- Address problem that JWS implementations are lacking support for RFC 7797, including:
-  - Recraft prototypes as JWS detached signature libraries to provide a RFC 7797 implementation (with a least RS256)
+- Determine how to address problem that JWS implementations are lacking support for RFC 7797:
+  - Recraft prototypes as JWS detached signature libraries to provide a RFC 7797 implementation (with a least RS256) to either be merged into official JWS libraries, or standalone bridges until official support is provided.
   - Double-check end-to-end samples with RS256 algorithm (not provided in RFC 7797 or PHP tests)
-- Add new signature suite to JSON-LD signature libraries, consuming JWS detached signature library described above
-- Prototype of `verify`
 - Determine way to embed JSON-LD signature options `created`, `creator` and `nonce`, and `domain`. Same as in `_getDataToHash`, use JWS headers, or other.
+- Add new signature suite to JSON-LD signature libraries, consuming JWS detached payload implementation
+- Prototype `verify`
 - Merkle proof draft spec (deprioritized)
 
