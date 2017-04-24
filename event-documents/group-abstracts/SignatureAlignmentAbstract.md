@@ -11,7 +11,7 @@ Existing implementors of JSON-LD signatures expressed concerns about the impact/
 - Develop prototypes in several key languages, to ensure library support
 - Ensure minimal impact on usability of Verifiable Claims and JSON-LD signatures
 
-Note that the only algorithm supported by RSA Signature Suite 2017 is __RS256__ -- a subset of the [JSON Web Signature Unencoded Payload Option RFC 7797](https://datatracker.ietf.org/doc/html/rfc7797).
+Note that the only algorithm supported by RSA Signature Suite 2017 is RS256 -- a subset of the [JSON Web Signature Unencoded Payload Option RFC 7797](https://datatracker.ietf.org/doc/html/rfc7797).
 
 ## Status
 
