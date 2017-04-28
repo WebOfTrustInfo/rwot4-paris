@@ -29,8 +29,8 @@ The major obstacle we encountered while performing this work was the lack of JSO
 
 The following prototypes were developed:
 
-- For Javascript/Node.js: https://github.com/WebOfTrustInfo/jsonld-signatures (this is a fork of JSON-LD signatures official library)
-- For Python: https://github.com/blockchain-certificates/ld-koblitz-signatures/tree/ld-jws
+- For Javascript/Node.js: https://github.com/WebOfTrustInfo/ld-signatures-js (this is a fork of JSON-LD signatures official library)
+- For Python: https://github.com/WebOfTrustInfo/jsonld-signatures-python (TODO: pending rename)
 - For Java: https://github.com/WebOfTrustInfo/ld-signatures-java
 
 ### JSON-LD JWS Implementation Guidance (cross-platform)
