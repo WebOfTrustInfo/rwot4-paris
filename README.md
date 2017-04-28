@@ -4,9 +4,15 @@ This repository contains documents related to the "Rebooting the Web-of-Trust" s
 
 ## DesignShop April 19th - 21st, 2017
 
-The [fourth DesignShop event](https://www.eventbrite.fr/e/billets-rebootingweboftrust-design-workshop-paris-2017-32228513351), to be held in the Paris, France on April 19th, 20th, & the 21st 2017, is a facilitated, invite-only event focused on creating the next generation of decentralized web-of-trust based identity systems. The goal of this initial DesignShop is to generate 5 technical white papers and/or proposals on topics decided by the group that will have the greatest impact on the future.
+The [fourth DesignShop event](https://www.eventbrite.fr/e/billets-rebootingweboftrust-design-workshop-paris-2017-32228513351) was held in Paris, France on April 19th, 20th, & the 21st 2017, working toward creating the next generation of decentralized web-of-trust based identity systems. The goal of this initial DesignShop was to generate 5 technical white papers and/or proposals on topics decided by the group that will have the greatest impact on the future.
 
-### Topics & Advance Readings
+Seven potential papers are currently in process, as outlined in the [draft documents folder](draft-documents/README.md).
+
+### The Next Design Shop
+
+The next Rebooting the Web of Trust design workshop will be October 3-5 in Boston, Masachusetts at IDEO.  
+
+## Topics & Advance Readings
 
 In advance of the April DesignShop, all participants were requested to post in the [Topics and Advanced Readings](topics-and-advance-readings) folder a one- or two-page topics paper to be shared with other attendees on either:
 
@@ -39,7 +45,7 @@ Our current list of topic papers:
    * [Verifiable Claims and Web of Trust](topics-and-advance-readings/WoTVerifiableClaims.md) by Manu Sporny, Christopher Allen, Joe Andrieu, Matthew Collier, Dave Longley, and Adam Lake
    * [XDI Verifiable Claims and Link Contracts](topics-and-advance-readings/xdi-verifiable-claims-link-contracts.md) by Markus Sabadello
    
-### Other Readings of Interest
+## Other Readings of Interest
 
 Following are some of the finished papers from past design shops. They're good reading to understand who we are and what our priorities and goals are:
 
