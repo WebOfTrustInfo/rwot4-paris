@@ -8,7 +8,7 @@ This is a listing of all the papers, specs, or other works in progress from Rebo
 |-----------|----------|----------|--------------|------------|
 | (1) What Users Really Want | Adam Lake | [Outline](https://docs.google.com/document/d/1wpmku6n9usFCjixXvDluuUnYzK3OYKix5BdEmV5u-_w/edit) | | | Skeleton |
 | (2) DID Auth | James | | [Overview](did-auth.md) |
-| (3) DKMS DID Service Discovery |  | [Spec](https://docs.google.com/document/d/1wtH7kejvu2OntZKbDQfLzxo-4zM3JTSnjcnxWvjEPLU/edit#heading=h.xa4gr2m3oax7) | | Outline |
+| (3) DKMS DID Service Discovery | Drummond | [Spec](https://docs.google.com/document/d/1wtH7kejvu2OntZKbDQfLzxo-4zM3JTSnjcnxWvjEPLU/edit#heading=h.xa4gr2m3oax7) | | Outline |
 | (4) DID Method Specs | Ryan (rgrant) | [Outline](https://docs.google.com/document/d/15HWtXTDXcvyUjgAqnewPoZKbgSWhl-XiIDas1ip94Hs/edit) | [Abstract](../event-documents/group-abstracts/work-abstract-did-methods-btcr-pgpr.md) | Abstract |
 | (6) Decentralized Reputation Systems | Angus Champion de Crespigny | | [Abstract](../event-documents/group-abstracts/DesignConsiderationsOfDecentralizedReputationSystems_Abstract.md) | Abstract |
 | (7) LD Signature Alignment | Kim Hamilton | [JSON Paper](../event-documents/group-abstracts/SignatureAlignmentImplementation.md) | [Abstract](../event-documents/group-abstracts/SignatureAlignmentAbstract.md) | Draft |
