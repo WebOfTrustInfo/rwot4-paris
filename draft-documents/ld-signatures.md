@@ -4,26 +4,37 @@ By Kim Hamilton Duffy, Rodolphe Marques, Markus Sabadello
 
 ## Abstract
 
-The goal of the "LD Signatures Format Alignment" Working Group at Rebooting the Web of Trust IV was to develop working prototypes of the proposed [RSA Signature Suite 2017](https://w3c-dvcg.github.io/lds-rsa2017/) spec, which incorporates the RS256 algorithm from the JSON Web Signatures RFC. This would allow us to answer two questions:
+The goal of the "LD Signature Format Alignment" Working Group at Rebooting the Web of Trust IV was to investigate the feasibility and impact of the proposed [2017 RSA Signature Suite](https://w3c-dvcg.github.io/lds-rsa2017/) spec, which brings JSON-LD signatures into alignment with the JOSE JSON Web Signature (JWS) standards.
 
-1. Is the spec sufficiently clear for implementors? 
-2. What is the impact to existing JSON-LD signature implementations?
+The 2017 RSA Signature Suite is based on [RFC 7797](https://tools.ietf.org/html/rfc7797), the JSON Web Signature (JWS) Unencoded Payload Option specification. The unencoded payload options that avoids [past concerns about use of JWS](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/master/topics-and-advance-readings/blockchain-extensions-for-linked-data-signatures.md), and achieves the following:
 
-Existing implementors of JSON-LD signatures expressed concerns about the impact/feasibility of JSON Web Signatures, as discussed in [Aligning Signature Formats](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/topics-and-advance-readings/SignatureFormatAlignment.md). This working group aimed to investigate and derisk these concerns by:
+ * Re-uses a signature format that has already been approved by IETF, and therefore no new security review is needed
+ * Digitally signs JSON
+ * Digitally signs Linked Data
+ * Avoids base64 encodings of the payload (through the unencoded payload option)
+ * Re-uses the same signature format that Verifiable Claims use.
 
-1. Developing prototypes for RSA Signature Suite 2017 in several key languages to ensure library support; while
-2. Minimizing impact on usability of Verifiable Claims and JSON-LD signatures
+Our working group had two primary questions about the proposed 2017 RSA Signature Suite:
 
-Note that the _only_ algorithm supported by RSA Signature Suite 2017 is RS256 — a subset of the [JSON Web Signature Unencoded Payload Option RFC 7797](https://datatracker.ietf.org/doc/html/rfc7797).
+1. Is the specification sufficiently clear for implementors?
+2. Is there a negative usability impact to LD signature implementations using this signature suite?
+
+To answer these questions, we developed prototypes for the suite in several key programming languages to assess:
+
+- Availability of library support for JWS unencoded payload options
+- Impact to existing LD signature implementations, e.g. [jsonld-signatures library](https://github.com/digitalbazaar/jsonld-signatures)
+- Impact to usability of Verifiable Claims (and others) using JSON-LD signatures with this signature suite.
+
 
 ## Status
 
 We accomplished our goals as follows:
 
-1. We delivered prototypes for RSA Signature Suite 2017 that provided sufficient confidence to move forward with the proposed aligned signature approach. 
-2. We verified that the impact to existing JSON-LD signature implementations — and usability in general — was minimal. Specifically, the RSA Signature Suite 2017 avoids the requirement of preserving the original binary form of the payload.
+1. We delivered prototypes for 2017 RSA Signature Suite that provided sufficient confidence to move forward with the proposed aligned signature approach. 
+2. We verified that there was no significant impact to existing LD signature implementations — and usability in general. Specifically, use of the unencoded payload option avoids the requirement of preserving the original binary form of the payload.
 
-The major obstacle we encountered while performing this work was the lack of JSON Web Signature library support for detached paylods, which is addressed in "Next Steps"
+The major obstacle we encountered while performing this work was the lack of JSON Web Signature library support for unencoded payloads, which is addressed in "Next Steps".
+
 
 ### Implementations of LD JWS signing
 
@@ -39,7 +50,7 @@ A white paper, which follows, describes the precise differences between existing
 
 ## Next Steps
 
-The primary gap in developing these prototypes, which accounted for most of our development work, was lack of JWS detached payload support. We thus propose to recraft the prototypes as JWS detached-signature libraries. 
+The primary gap in developing these prototypes, which accounted for most of our development work, was lack of library support for JWS unencoded payloads. To work around this limitation, our implementations mirrored the only implementation we found, available in the [JOSE PHP library](https://github.com/Spomky-Labs/josePHP). A cleaner solution we propose is to recraft our prototypes as JWS unencoded payload libraries. 
 
 Such a library would expose simple sign-and-verify APIs, for example:
 ```
@@ -55,21 +66,20 @@ This library would facilitate minimal changes to existing JSON-LD signature impl
   - Recraft prototypes as JWS detached-signature libraries to provide a RFC 7797 implementation (with a least RS256) to either be merged into official JWS libraries or to act as standalone bridges until official support is provided.
   - Double-check end-to-end samples with RS256 algorithm (not provided in RFC 7797 or PHP tests).
 - Determine way to embed JSON-LD signature options `created`, `creator` and `nonce`, and `domain`. Same as in `_getDataToHash`, use JWS headers, or other.
-- Add new signature suite to JSON-LD signature libraries, consuming JWS detached payload implementation.
 - Prototype `verify`.
-- Merkle proof draft spec (deprioritized).
+- - Add 2017 RSA Signature suite to JSON-LD signature libraries, consuming JWS detached payload implementation.
 
 ==========================================================================================================================================
 
-# Implementing the JSON-LD RSA Signature Suite 2017
+# Implementing the 2017 RSA Signature Suite in a LD signature library
 
 By Kim Hamilton Duffy, Rodolphe Marques, Markus Sabadello
 
-This document describes specific steps and issues with implementing the RSA Signature Suite 2017. It assumes familiarity with JSON-LD signatures and focuses on specific changes to the algorithm necessary to generate RSA Signature Suite 2017 signatures. Note that many of these steps should be performed by a detached payload-aware JSON Web Signature (JWS) library.
+This document describes specific steps and issues with implementing the 2017 RSA Signature Suite in an existing LD signature library.
 
 ## Source of Truth 
 
-RFC 7797 does not include an RS256 testcase, so we created a source of trust using the one JOSE [implementation](https://github.com/Spomky-Labs/jose) (PHP) that follows the RFC 7797 spec. We created a detached payload / RS256 unit test to obtain a source of truth.
+RFC 7797 does not include an RS256 testcase, so we created a source of truth using the JOSE [implementation](https://github.com/Spomky-Labs/jose) (PHP) that implements the RFC 7797 spec. We created a detached payload / RS256 unit test to obtain a source of truth.
 
 ```php
 
@@ -117,77 +127,92 @@ Note this test uses the `{"alg":"RS256","b64":false,"crit":["b64"]}` header and 
 The input of the signing function should match `eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19.$.02`
 and the resulting signature should match `eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..fZRkjTTrcXdUovHjghM6JvlMhJuR1s8X1F4Uy_F4oMhZ9KtF2Zp78lYSOI7OxB5uoTu8FpQHvy-dz3N4nLhoSWAi2_HrxZG_2DyctUUB_8pRKYBmIdIgpOlEMjIreOvXyM6A32gR-PdbzoQq14yQbbfxk12jyZSwcaNu29gXnW_uO7ku1GSV_juWE5E_yIstvEB1GG8ApUGIuzRJDrAAa8KBkHN7Rdfhc8rJMOeSZI0dc_A-Y7t0M0RtrgvV_FhzM40K1pwr1YUZ5y1N4QV13M5u5qJ_lBK40WtWYL5MbJ58Qqk_-Q8l1dp6OCmoMvwdc7FmMsPigmyklqo46uyjjw`
 
-Our prototypes successfully matched this testcase,and matched results on JSON-LD claim inputs.
+Our prototypes successfully matched this testcase, and matched results on JSON-LD claim inputs.
 
-## Creating JSON-LD signatures with JSON-LD RSA 2017 Signature Suite
+## LD signature flow
 
 ### Overview
 
-Starting with a JSON-LD document, the goal is to produce a JSON Web Signature, using the following steps:
+The signing flow for the 2017 RSA Signature Suite is identical to other signature suites in the [JSON-LD signature library](https://github.com/digitalbazaar/jsonld-signatures); the processing required to implement 2017 RSA Signatures is confined to step #4 bolded below (all other steps are unchanged). A new algorithm, `RsaSignature2017`, was added to implement this signature suite.
 
-1. Normalize the JSON-LD with the `URDNA2015` algorithm (now called `GCA2015`).
-2. SHA256-hash the normalized JSON-LD.
-3. Use the hash as the input for a JWS signature with the header `{"alg":"RS256","b64":false,"crit":["b64"]}`.
-4. Create a new key `signatureValue` in the JSON-LD document and use the generated signature as its value.
-   
-### Detailed Steps 
-
-The signing flow for the RSA 2017 Signature Suite is identical to other signature suites in the [JSON-LD signature library](https://github.com/digitalbazaar/jsonld-signatures); the only modifications required are in the `createSignature` function. A new algorithm, `RsaSignature2017`, was added to implement this signature suite.
-
-Following is a description of the detailed signing steps, including processing due to lack of JWS library support for detached payloads.
-
-**Note** A proper implementation would recraft these steps as a JWS detached-signature library, as opposed to including these steps in a JSON-LD signature library.
+The LD signature algorithm works as follows:
 
 Inputs:
-
 - JSON-LD headers (nonce, created, creator, ...) same as before, algorithm should be `RsaSignature2017` 
 - JSON-LD document
 
 JSON-LD Signing Algorithm:
 
 1. Ensure algorithm is in accepted set
-2. Add 'created' date of now, if not supplied
-3. Canonicalize using the `GCA2015` algorithm (formerly`URDNA2015`)
-4. **Perform RSA Signature Suite 2017 signing**
-5. compact the signature
-6. return the JSON-LD document with the signature block added
+2. Add `created` date of now, if not supplied
+3. Canonicalize using the `GCA2015` algorithm, as specified in the 2017 RSA Signature Suite specification (NOTE: `GCA2015` was formerly called `URDNA2015`)
+4. **Sign with the 2017 RSA Signature Suite** (details in next section)
+5. Compact the signature
 
-### RSA Signature Suite 2017 Signatures
+Outputs:
+- JSON-LD document with the signature block added
 
-**Note/TODO** Our prototypes omit the call to `_getDataToHash`, which prefixes the JSON-LD normalized document with the sorted header key/values `created`, `domain`, and `nonce` (all that are supplied). We need to decide whether to use that approach, or to rely on JWS headers (if protected headers, they are part of the signed payload).
 
-This approach uses JOSE JWS detached payload signing, as described in [RFC 7797](https://tools.ietf.org/html/rfc7797). The JWS headers to use are:
+### Signing with the 2017 RSA Signature Suite
+
+This section drills into step #4 above.
+
+To extend the [JSON-LD signature library](https://github.com/digitalbazaar/jsonld-signatures) to support the 2017 RSA Signature Suite, we added a new algorithm type -- `RsaSignature2017` -- and a new processing case for this type in the function `createSignature`.
+
+First, suppose a JWS library with unencoded payload support were available. If so, then the steps would be:
+
+1. Form the JWS Headers
+
+Per [RFC 7797](https://tools.ietf.org/html/rfc7797), creating a JWS signature using the unencoded payload option requires the JWS Header parameters `"b64":false` and `"crit":["b64"]`. In addition to these parameters, `RsaSignature2017` specifies using RSA Signatures with SHA-256. This corresponds to a JWS signing algorithm of `RS256`.
+
+In sum the complete set of JWS headers used for a 2017 RSA Signature is:
 ```
-protectedHeaders = {
+{
     "alg":"RS256",
     "b64":false,
     "crit":["b64"]
 }
 ```
 
-This will be a protected header, meaning it is part of the signature. JOSE JWS detached payload signing expects the following input:
+2. Call the JWS library with headers from #1 (parameter 1: `headers`) and the JSON-LD canonicalized payload (parameter 2: `payload`)
+
 ```
-ASCII(BASE64URL(UTF8(JWS Protected Header)) || '.' || JWS Payload  
+result = sign(headers: JSON, payload: STRING);
 ```
 
-The protected header handling can be broken into these steps:
+3. Update the LD `signature` block to contain `signatureValue=<result>`
 
-1. Stringify the protected header JSON, sorting the keys. 
-	- sorting is an implementation choice to allow predictability
-2. Encode the stringified header as follows:
-	- utf-8 encode
-	- base64 url encode
-	- ascii encode
+#### Implementing JWS unencoded payload signing
 
-Signing then uses the following steps, where `input` is the normalized JSON-LD.
+In step #2 above, we assumed the availabilty of a JWS library supporting unencoded payloads. Because we only found a PHP library supporting unencoded payloads, we needed to reimplement those steps.
 
-- form the JWS input to sign as <header> + "." + <input>
-- RSASHA256-sign the JWS input.
-- base64-url-encode the signature value
-- form the complete signature to be placed in `signatureValue` as <header> + ".." + <base64Signature>
-	- In JWS, the payload would normally be between the middle 2 dots, but this is a detached payload
+Per [RFC 7797](https://tools.ietf.org/html/rfc7797), when the `b64` header parameter is used, it must be integrity protected. Therefore it must occur within the JWS Protected Header (meaning it is part of the input that is signed). Also, per RFC7797, the expected input to sign is formatted as follows:
 
-_Note that the header is included in the signature, so the sorting done during the protected header handling isn't technically necessarily. Verification would need to ensure it uses the same encoded header._
+`ASCII(BASE64URL(UTF8(JWS Protected Header)) || '.' || JWS Payload`
+
+In our case, `JWS Payload` is the normalized JSON-LD.
+
+This yields the following steps:
+
+1. Format the input to sign: 
+    1. Stringify the protected header JSON, sorting the keys. 
+	    - Note: sorting is an implementation choice to allow predictability
+    2. Encode the stringified header as follows:
+	    1. utf-8 encode
+	    2. base64 url encode
+	    3. ascii encode
+	3. Form the JWS input to sign as `<header> + "." + <payload>`
+	    - The critical distinction here is that `payload` is not base64 encoded, per the b64=false argument. 
+2. Sign::
+    1. RSASHA256-sign the JWS input
+    2. base64-url-encode the signature value
+3. Return the signature result `<header> + ".." + <base64Signature>`
+    - The `..` indicates a JWS detached payload. Note that typically in in JWS, the payload be between the middle 2 dots.
+
+Notes:
+1. Note that the header is included in the signature, so the sorting done during the protected header handling isn't technically necessarily. Verification would need to ensure it uses the same encoded header.
+2. Our prototypes omit the call to `_getDataToHash`, which prefixes the JSON-LD normalized document with the sorted header key/values `created`, `domain`, and `nonce` (all that are supplied). We need to decide whether to use that approach, or to rely on JWS headers (if protected headers, they are part of the signed payload).
+
 
 ## Steps to Verify
 
@@ -237,10 +262,10 @@ json.dumps(header, separators=(',', ':'), sort_keys=True).encode('utf-8')
 b'{"alg":"RS256","b64":false,"crit":["b64"]}'
 ```
 
-## Modifications to javascript JSON-LD signature library to support `RsaSignature2017`
+## Reference: Modifications to javascript JSON-LD signature library to support `RsaSignature2017`
 
 The only modifications are:
-- Add new algorithm `RsaSignature2017`
+- Add new algorithm type `RsaSignature2017`
 - Add new path to `_createSignature` to support `RsaSignature2017`
 - TBD additional JSON-LD headers (nonce, created, creator, ...)
 
@@ -277,5 +302,7 @@ if(options.algorithm === 'RsaSignature2017') {
 }
 ```
 
-**Reminder** These steps should not be implemented directly in the JSON-LD signatures library; instead they should be refactored into a JWS detached payload library.
+**Reminder** Most of these steps should not be implemented directly in the JSON-LD signatures library as shown here; instead they should be refactored into a JWS detached payload library.
 
+
+https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/topics-and-advance-readings/SignatureFormatAlignment.md
