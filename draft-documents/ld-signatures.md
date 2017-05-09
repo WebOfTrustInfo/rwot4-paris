@@ -65,9 +65,9 @@ This library would facilitate minimal changes to existing JSON-LD signature impl
 - Determine how to address problem that JWS implementations lack support for RFC 7797:
   - Recraft prototypes as JWS detached-signature libraries to provide a RFC 7797 implementation (with a least RS256) to either be merged into official JWS libraries or to act as standalone bridges until official support is provided.
   - Double-check end-to-end samples with RS256 algorithm (not provided in RFC 7797 or PHP tests).
-- Determine way to embed JSON-LD signature options `created`, `creator` and `nonce`, and `domain`. Same as in `_getDataToHash`, use JWS headers, or other.
 - Prototype `verify`.
-- - Add 2017 RSA Signature suite to JSON-LD signature libraries, consuming JWS detached payload implementation.
+- Add 2017 RSA Signature suite to JSON-LD signature libraries, consuming JWS detached payload implementation.
+  - Ensure javascript and Node.js environments are supported
 
 ==========================================================================================================================================
 
@@ -133,7 +133,7 @@ Our prototypes successfully matched this testcase, and matched results on JSON-L
 
 ### Overview
 
-The signing flow for the 2017 RSA Signature Suite is identical to other signature suites in the [JSON-LD signature library](https://github.com/digitalbazaar/jsonld-signatures); the processing required to implement 2017 RSA Signatures is confined to step #4 bolded below (all other steps are unchanged). A new algorithm, `RsaSignature2017`, was added to implement this signature suite.
+The signing flow for the 2017 RSA Signature Suite is identical to other signature suites in the [JSON-LD signature library](https://github.com/digitalbazaar/jsonld-signatures); the processing required to implement 2017 RSA Signatures is confined to step #5 bolded below (all other steps are unchanged). A new algorithm, `RsaSignature2017`, was added to implement this signature suite.
 
 The LD signature algorithm works as follows:
 
@@ -146,8 +146,9 @@ JSON-LD Signing Algorithm:
 1. Ensure algorithm is in accepted set
 2. Add `created` date of now, if not supplied
 3. Canonicalize using the `GCA2015` algorithm, as specified in the 2017 RSA Signature Suite specification (NOTE: `GCA2015` was formerly called `URDNA2015`)
-4. **Sign with the 2017 RSA Signature Suite** (details in next section)
-5. Compact the signature
+4. Prepend the JSON-LD signature headers `date`, `domain`, `nonce` to the input to sign (as implemented in the `_getDataToHash` method of the JSON-LD signature library
+5. **Sign with the 2017 RSA Signature Suite** (details in next section)
+6. Compact the signature
 
 Outputs:
 - JSON-LD document with the signature block added
@@ -155,7 +156,7 @@ Outputs:
 
 ### Signing with the 2017 RSA Signature Suite
 
-This section drills into step #4 above.
+This section drills into step #5 above.
 
 To extend the [JSON-LD signature library](https://github.com/digitalbazaar/jsonld-signatures) to support the 2017 RSA Signature Suite, we added a new algorithm type -- `RsaSignature2017` -- and a new processing case for this type in the function `createSignature`.
 
@@ -196,7 +197,7 @@ This yields the following steps:
 
 1. Format the input to sign: 
     1. Stringify the protected header JSON, sorting the keys. 
-	    - Note: sorting is an implementation choice to allow predictability
+        - Note: sorting the protected header parameters is an implementation choice to allow predictability. Since the original JWS header can be obtained from the JWS signature prefix, verification could simply ensure it encodes the JWS headers in the same order.
     2. Encode the stringified header as follows:
 	    1. utf-8 encode
 	    2. base64 url encode
@@ -208,10 +209,6 @@ This yields the following steps:
     2. base64-url-encode the signature value
 3. Return the signature result `<header> + ".." + <base64Signature>`
     - The `..` indicates a JWS detached payload. Note that typically in in JWS, the payload be between the middle 2 dots.
-
-Notes:
-1. Note that the header is included in the signature, so the sorting done during the protected header handling isn't technically necessarily. Verification would need to ensure it uses the same encoded header.
-2. Our prototypes omit the call to `_getDataToHash`, which prefixes the JSON-LD normalized document with the sorted header key/values `created`, `domain`, and `nonce` (all that are supplied). We need to decide whether to use that approach, or to rely on JWS headers (if protected headers, they are part of the signed payload).
 
 
 ## Steps to Verify
@@ -267,7 +264,6 @@ b'{"alg":"RS256","b64":false,"crit":["b64"]}'
 The only modifications are:
 - Add new algorithm type `RsaSignature2017`
 - Add new path to `_createSignature` to support `RsaSignature2017`
-- TBD additional JSON-LD headers (nonce, created, creator, ...)
 
 ```
 if(options.algorithm === 'RsaSignature2017') {
@@ -289,7 +285,7 @@ if(options.algorithm === 'RsaSignature2017') {
 	var asciiHeader = Buffer.from(b64UrlEncodedHeader, 'utf-8').toString('ascii');
 
 	// jws input to sign
-	var to_sign = asciiHeader + "." + input;
+	var to_sign = asciiHeader + "." + _getDataToHash(input, options);
 
 	signer.update(to_sign);
 	var signatureBytes = signer.sign(options.privateKeyPem);
