@@ -1,6 +1,6 @@
 # LD Signature Format Alignment
 
-By Kim Hamilton Duffy, Rodolphe Marques, Markus Sabadello
+By Kim Hamilton Duffy, Rodolphe Marques, Markus Sabadello, Manu Sporny
 
 ## Abstract
 
