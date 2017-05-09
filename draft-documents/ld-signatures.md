@@ -146,7 +146,7 @@ JSON-LD Signing Algorithm:
 1. Ensure algorithm is in accepted set
 2. Add `created` date of now, if not supplied
 3. Canonicalize using the `GCA2015` algorithm, as specified in the 2017 RSA Signature Suite specification (NOTE: `GCA2015` was formerly called `URDNA2015`)
-4. Prepend the JSON-LD signature headers `date`, `domain`, `nonce` to the input to sign (as implemented in the `_getDataToHash` method of the JSON-LD signature library
+4. Prepend the JSON-LD signature options `date`, `domain`, `nonce` to the input to sign, as implemented in the `_getDataToHash` method of the JSON-LD signature library
 5. **Sign with the 2017 RSA Signature Suite** (details in next section)
 6. Compact the signature
 
