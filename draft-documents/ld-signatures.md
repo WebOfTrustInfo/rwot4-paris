@@ -65,9 +65,7 @@ This library would facilitate minimal changes to existing JSON-LD signature impl
 - Determine how to address problem that JWS implementations lack support for RFC 7797:
   - Recraft prototypes as JWS detached-signature libraries to provide a RFC 7797 implementation (with a least RS256) to either be merged into official JWS libraries or to act as standalone bridges until official support is provided.
   - Double-check end-to-end samples with RS256 algorithm (not provided in RFC 7797 or PHP tests).
-- Prototype `verify`.
 - Add 2017 RSA Signature suite to JSON-LD signature libraries, consuming JWS detached payload implementation.
-  - Ensure javascript and Node.js environments are supported
 
 ==========================================================================================================================================
 
@@ -259,46 +257,38 @@ json.dumps(header, separators=(',', ':'), sort_keys=True).encode('utf-8')
 b'{"alg":"RS256","b64":false,"crit":["b64"]}'
 ```
 
-## Reference: Modifications to javascript JSON-LD signature library to support `RsaSignature2017`
+## Reference: Modifications to javascript JSON-LD signature library to support 2017 RSA Signature Suite
 
-The only modifications are:
+The [ld-signatures-js repo](https://github.com/WebOfTrustInfo/ld-signatures-js) contains the 2017 RSA Signature Suite prototype
+
+The modifications are:
 - Add new algorithm type `RsaSignature2017`
-- Add new path to `_createSignature` to support `RsaSignature2017`
+- Add new paths to `_createSignature` to support `RsaSignature2017` (Node.js and Javascript environments)
+- Add new paths to `_verifySignature` to support `RsaSignature2017` (Node.js and Javascript environments)
+
+For example, the inlined implementation of `_createSignature` with algorithm `RsaSignature2017` (Node.js environment) is:
 
 ```
-if(options.algorithm === 'RsaSignature2017') {
-	var crypto = api.use('crypto');
-	var signer = crypto.createSign('RSA-SHA256');
+var crypto = api.use('crypto');
+var signer = crypto.createSign('RSA-SHA256');
 
-	// detached signature headers for JWS
-	var protectedHeader = {"alg":"RS256","b64":false,"crit":["b64"]};
+// detached signature headers for JWS
+var protectedHeader = {"alg":"RS256","b64":false,"crit":["b64"]};
 
-	// ensure the stringified version of the protected header has a consistent ordering
-	var stringifiedHeader = JSON.stringify(protectedHeader, Object.keys(protectedHeader).sort());
+var stringifiedHeader = JSON.stringify(protectedHeader, Object.keys(protectedHeader).sort());
+var b64UrlEncodedHeader = base64url.encode(stringifiedHeader);
 
-	// utf-8 encode and base64 url encode the protected header.
-	// Note that base64url.encode does the following, and Buffer(str) default encoding is utf-8:
-	// new Buffer(str).toString('base64')
-	var b64UrlEncodedHeader = base64url.encode(stringifiedHeader);
+// jws input to sign
+var to_sign = b64UrlEncodedHeader + "." + _getDataToHash(input, options);
 
-	// ensure resulting string is ascii
-	var asciiHeader = Buffer.from(b64UrlEncodedHeader, 'utf-8').toString('ascii');
+// sign
+signer.update(to_sign, 'utf-8');
+var signaturePart = signer.sign(options.privateKeyPem, 'base64');
 
-	// jws input to sign
-	var to_sign = asciiHeader + "." + _getDataToHash(input, options);
-
-	signer.update(to_sign);
-	var signatureBytes = signer.sign(options.privateKeyPem);
-
-	var base64Signature = base64url.encode(signatureBytes);
-
-	// JWS signature is encoded proctected header + '..' + signature
-	// .. is because this is a detached payload
-	signature = b64UrlEncodedHeader + ".." + base64Signature;
-}
+// JWS signature for unencoded payload is: <b64UrlEncodedHeader> + '..' + <signaturePath>
+var signature = b64UrlEncodedHeader + ".." + signaturePart;
 ```
 
-**Reminder** Most of these steps should not be implemented directly in the JSON-LD signatures library as shown here; instead they should be refactored into a JWS detached payload library.
-
+**Reminder** This inlined version is to demonstrate the computations performed. It includes steps that should be performed by a JWS library supporting unencoded payloads. The [ld-signatures-js repo](https://github.com/WebOfTrustInfo/ld-signatures-js) factors these parts out as separate functions, but should ultimately be replaced by a proper JWS library supporting unencoded payloads, when a javascript implementation exists.
 
 https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/topics-and-advance-readings/SignatureFormatAlignment.md
