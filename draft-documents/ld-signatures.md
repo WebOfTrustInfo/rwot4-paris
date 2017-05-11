@@ -75,7 +75,7 @@ This document describes specific steps and issues with implementing the 2017 RSA
 
 ## Source of Truth 
 
-RFC 7797 does not include an RS256 testcase, so we created a source of truth using the JOSE [implementation](https://github.com/Spomky-Labs/jose) (PHP) that implements the RFC 7797 spec. We created a detached payload / RS256 unit test to obtain a source of truth.
+RFC 7797 does not include an RS256 testcase, so we created a detached payload / RS256 unit test to obtain a source of truth using the JOSE [implementation](https://github.com/Spomky-Labs/jose) (PHP) that implements the RFC 7797 spec.
 
 ```php
 
@@ -149,7 +149,6 @@ JSON-LD Signing Algorithm:
 Outputs:
 - JSON-LD document with the signature block added
 
-
 ### Signing with the 2017 RSA Signature Suite
 
 This section drills into step #5 above.
@@ -198,14 +197,13 @@ This yields the following steps:
 	    1. utf-8 encode
 	    2. base64 url encode
 	    3. ascii encode
-	3. Form the JWS input to sign as `<header> + "." + <payload>`
+    3. Form the JWS input to sign as `<header> + "." + <payload>`
 	    - The critical distinction here is that `payload` is not base64 encoded, per the b64=false argument. 
-2. Sign::
+2. Sign:
     1. RSASHA256-sign the JWS input
     2. base64-url-encode the signature value
-3. Return the signature result `<header> + ".." + <base64Signature>`
+3. Return the signature result `<header> + ".." + <base64Signature>`:
     - The `..` indicates a JWS detached payload. Note that typically in in JWS, the payload be between the middle 2 dots.
-
 
 ## Steps to Verify
 
