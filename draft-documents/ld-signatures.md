@@ -6,13 +6,13 @@ By Kim Hamilton Duffy, Rodolphe Marques, Markus Sabadello, Manu Sporny
 
 The goal of the "LD Signature Format Alignment" Working Group at Rebooting the Web of Trust IV was to investigate the feasibility and impact of the proposed [2017 RSA Signature Suite](https://w3c-dvcg.github.io/lds-rsa2017/) spec, which brings JSON-LD signatures into alignment with the JOSE JSON Web Signature (JWS) standards.
 
-The 2017 RSA Signature Suite is based on [RFC 7797](https://tools.ietf.org/html/rfc7797), the JSON Web Signature (JWS) Unencoded Payload Option specification. The unencoded payload options that avoids [past concerns about use of JWS](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/master/topics-and-advance-readings/blockchain-extensions-for-linked-data-signatures.md), and achieves the following:
+The 2017 RSA Signature Suite is based on [RFC 7797](https://tools.ietf.org/html/rfc7797), the JSON Web Signature (JWS) Unencoded Payload Option specification. These unencoded payload options avoid [past concerns about the use of JWS](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/master/topics-and-advance-readings/blockchain-extensions-for-linked-data-signatures.md) and achieve the following:
 
  * Re-uses a signature format that has already been approved by IETF, and therefore no new security review is needed
  * Digitally signs JSON
  * Digitally signs Linked Data
  * Avoids base64 encodings of the payload (through the unencoded payload option)
- * Re-uses the same signature format that Verifiable Claims use.
+ * Re-uses the same signature format that Verifiable Claims use
 
 Our working group had two primary questions about the proposed 2017 RSA Signature Suite:
 
@@ -25,16 +25,14 @@ To answer these questions, we developed prototypes for the suite in several key 
 - Impact to existing LD signature implementations, e.g. [jsonld-signatures library](https://github.com/digitalbazaar/jsonld-signatures)
 - Impact to usability of Verifiable Claims (and others) using JSON-LD signatures with this signature suite.
 
-
 ## Status
 
 We accomplished our goals as follows:
 
-1. We delivered prototypes for 2017 RSA Signature Suite that provided sufficient confidence to move forward with the proposed aligned signature approach. 
+1. We delivered prototypes for the 2017 RSA Signature Suite that provided sufficient confidence to move forward with the proposed aligned signature approach. 
 2. We verified that there was no significant impact to existing LD signature implementations — and usability in general. Specifically, use of the unencoded payload option avoids the requirement of preserving the original binary form of the payload.
 
 The major obstacle we encountered while performing this work was the lack of JSON Web Signature library support for unencoded payloads, which is addressed in "Next Steps".
-
 
 ### Implementations of LD JWS signing
 
@@ -50,9 +48,9 @@ A white paper, which follows, describes the precise differences between existing
 
 ## Next Steps
 
-The primary gap in developing these prototypes, which accounted for most of our development work, was lack of library support for JWS unencoded payloads. To work around this limitation, our implementations mirrored the only implementation we found, available in the [JOSE PHP library](https://github.com/Spomky-Labs/josePHP). A cleaner solution we propose is to recraft our prototypes as JWS unencoded payload libraries. 
+The primary gap in developing these prototypes, which accounted for most of our development work, was lack of library support for JWS unencoded payloads. To work around this limitation, our implementations mirrored the only implementation we found, available in the [JOSE PHP library](https://github.com/Spomky-Labs/josePHP). 
 
-Such a library would expose simple sign-and-verify APIs, for example:
+A cleaner solution that we propose is to recraft our prototypes as JWS unencoded payload libraries. Such a library would expose simple sign-and-verify APIs, for example:
 ```
 signature = sign(headers: JSON, payload: STRING);
 ```
