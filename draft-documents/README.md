@@ -11,7 +11,7 @@ This is a listing of all the papers, specs, or other works in progress from Rebo
 | (3) DKMS DID Service Discovery | Drummond | [Spec](https://docs.google.com/document/d/1wtH7kejvu2OntZKbDQfLzxo-4zM3JTSnjcnxWvjEPLU/edit#heading=h.xa4gr2m3oax7) | | June 30 |
 | (4) DID Method Specs | Ryan (rgrant) | [Outline](https://docs.google.com/document/d/15HWtXTDXcvyUjgAqnewPoZKbgSWhl-XiIDas1ip94Hs/edit) | [Abstract](../event-documents/group-abstracts/work-abstract-did-methods-btcr-pgpr.md) | August |
 | (4.1) DID Method Spec: Bitcoin | Christopher + Ryan | | 
-| (6) Decentralized Reputation Systems | Angus Champion de Crespigny | | [Abstract](../event-documents/group-abstracts/DesignConsiderationsOfDecentralizedReputationSystems_Abstract.md) | Abstract |
+| (6) Decentralized Reputation Systems | Angus Champion de Crespigny | | [Abstract](../event-documents/group-abstracts/DesignConsiderationsOfDecentralizedReputationSystems_Abstract.md) | May |
 | (7) LD Signature Alignment | Kim Hamilton | [Draft](ld-signatures.md) | [Abstract](../event-documents/group-abstracts/SignatureAlignmentAbstract.md) | Awaiting Edit |
 | (-) Functional Identity | Joe A. | | | Early Stages |
 | (-) What is a Minimum Verifiable Claim? | Christopher | 
