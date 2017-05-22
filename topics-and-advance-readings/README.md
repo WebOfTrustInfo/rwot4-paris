@@ -1,6 +1,6 @@
 ## Topics & Advance Readings
 
-In advance of the April DesignShop, all participants were requested to post in the [Topics and Advanced Readings](topics-and-advance-readings) folder a one- or two-page topics paper to be shared with other attendees on either:
+In advance of the April DesignShop, all participants were requested to post in this folder a one- or two-page topics paper to be shared with other attendees on either:
 
 * A specific problem that you'd like to solve with a web-of-trust solution, and why current solutions (such as PGP or CA-based PKI) can't address the problem.
 *  A specific solution related to the web-of-trust that you'd like others to use or contribute to.
