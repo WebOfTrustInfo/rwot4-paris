@@ -1,18 +1,8 @@
 # What Users Really Want
 
-A paper of the Rebooting the Web of Trust workshop, Paris, 2017
+### A paper of the Rebooting the Web of Trust workshop, Paris, 2017
 
-Joe Andrieu &lt;joe@legendaryrequirements.com&gt;
-
-Frederic Engel &lt;market.engel@gmail.com&gt;
-
-Adam Lake &lt;creatinglake@gmail.com&gt;
-
-Moses Ma &lt;moses.ma@futurelabconsulting.com&gt;
-
-Olivier Maas &lt;olivier.maas@worldline.com&gt;
-
-Mark van der Waal &lt;mark.vanderwaal@sovalacc.com&gt;
+#### By Joe Andrieu &lt;joe@legendaryrequirements.com&gt;, Frederic Engel &lt;market.engel@gmail.com&gt;, Adam Lake &lt;creatinglake@gmail.com&gt;, Moses Ma &lt;moses.ma@futurelabconsulting.com&gt;, Olivier Maas &lt;olivier.maas@worldline.com&gt;, Mark van der Waal &lt;mark.vanderwaal@sovalacc.com&gt;
 
 We consider five fictional personas to explore the obstacles and
 opportunities for self-sovereign identity. For one, Rutu Shah, we
@@ -151,10 +141,7 @@ A Day in the Life of Rutu Shah
 
 A fictional persona, Ms. Rutu Shah is the mayor of a modest city,
 Ahmedabad, India[^5]. Here we envision a day in her live, enhanced by
-self-sovereign identity. ![](media/image2.jpg)
-
-\
-=
+self-sovereign identity. ![A Day in the Life of Ruta](../supporting-files/what-users-really-want-rutu.jpg)
 
 Appendix A - NOTES
 ==================
