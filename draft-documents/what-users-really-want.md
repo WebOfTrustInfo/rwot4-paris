@@ -24,7 +24,7 @@ Renée Moreau
 Mme. Renée Moreau is a seventy-eight-year-old grandmother living in the
 town of Amiens, France[^1]. She has a low level of understanding about
 information technology, but fears being hacked and losing what meager
-savings she has left. To the extent she has discussed it with her
+savings she has left. To the extent that she has discussed it with her
 children, Renée Moreau feels “fancy” identity solutions are just too
 complicated for her to use.
 
@@ -53,7 +53,7 @@ applications are managed through a centralized Active Directory service
 and departmental applications are free to implement their own identity
 approach. He underestimates his company risk for regulatory compliance
 and tends to avoid technical topics where his aging expertise might
-appear dated. Employees suffer from as much as 15 minutes/day dealing
+appear dated. Employees spend as much as 15 minutes per day dealing
 with logins at both intranet and Internet sites. Phishing is a
 significant, but overlooked security risk.
 
@@ -66,14 +66,14 @@ Mayumi Takamasa
 ---------------
 
 Miss Mayumi Takamasa is a seventeen-year-old female student in Tokyo,
-Japan. In conversations about privacy risk, she is dismissive and
+Japan. In conversations about privacy risks, she is dismissive and
 doesn’t care about advanced identity management. Online she has seen
 cyberbullying among her peers and goes to some effort to create
 boundaries between what she and her friends post for each other and what
 her mother can see.
 
-Reframing: **MySociety** social game creates independent identity across
-social network platforms--without exposing content to uninvited eyes.
+Reframing: The **MySociety** social game creates independent identity across
+social network platforms — without exposing content to uninvited eyes.
 The game creates pseudonymous social spaces with built-in privacy,
 disappearing messages, and points, levels, and badges based on social
 interactions.
@@ -88,8 +88,8 @@ made it out of the country. He has no technology to speak of and has
 provided authorities with a fake name. He needs health care and basic
 human services.
 
-Reframing: **MyID**: a biometric + PIN secured digital datastore in a
-USB thumb drive gives Joram physical control over identity data that
+Reframing: **MyID**, a biometric-and-PIN-secured digital datastore in a
+USB thumb drive, gives Joram physical control over identity data that
 only he has the power to share.
 
 Rutu Shah
@@ -99,7 +99,7 @@ Ms. Rutu Shah is a thirty-eight-year-old Mayor of a modest city in
 India, Ahmedabad[^2]. In her daily life she is wary of phishing attacks
 and security risks, but social and economic issues have taken priority
 over pushing for better identity across city services. She understands
-the value, but struggles to push for change when commitments to
+the value, but struggles to push for change, as commitments to
 drinkable water, better education, and sustainable jobs got her elected.
 She is particularly concerned about online predators and children’s
 safety.
