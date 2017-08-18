@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 A paper of the Rebooting the Web of Trust workshop, Paris, 2017
 
 Joe Andrieu &lt;joe@legendaryrequirements.com&gt;
@@ -11,6 +12,13 @@ Moses Ma &lt;moses.ma@futurelabconsulting.com&gt;
 Olivier Maas &lt;olivier.maas@worldline.com&gt;
 
 Mark van der Waal &lt;mark.vanderwaal@sovalacc.com&gt;
+=======
+# What Users Really Want
+
+### A paper of the Rebooting the Web of Trust workshop, Paris, 2017
+
+#### By Joe Andrieu &lt;joe@legendaryrequirements.com&gt;, Frederic Engel &lt;market.engel@gmail.com&gt;, Adam Lake &lt;creatinglake@gmail.com&gt;, Moses Ma &lt;moses.ma@futurelabconsulting.com&gt;, Olivier Maas &lt;olivier.maas@worldline.com&gt;, Mark van der Waal &lt;mark.vanderwaal@sovalacc.com&gt;
+>>>>>>> origin/master
 
 We consider five fictional personas to explore the obstacles and
 opportunities for self-sovereign identity. For one, Rutu Shah, we
@@ -32,7 +40,11 @@ Renée Moreau
 Mme. Renée Moreau is a seventy-eight-year-old grandmother living in the
 town of Amiens, France[^1]. She has a low level of understanding about
 information technology, but fears being hacked and losing what meager
+<<<<<<< HEAD
 savings she has left. To the extent she has discussed it with her
+=======
+savings she has left. To the extent that she has discussed it with her
+>>>>>>> origin/master
 children, Renée Moreau feels “fancy” identity solutions are just too
 complicated for her to use.
 
@@ -61,7 +73,11 @@ applications are managed through a centralized Active Directory service
 and departmental applications are free to implement their own identity
 approach. He underestimates his company risk for regulatory compliance
 and tends to avoid technical topics where his aging expertise might
+<<<<<<< HEAD
 appear dated. Employees suffer from as much as 15 minutes/day dealing
+=======
+appear dated. Employees spend as much as 15 minutes per day dealing
+>>>>>>> origin/master
 with logins at both intranet and Internet sites. Phishing is a
 significant, but overlooked security risk.
 
@@ -74,14 +90,23 @@ Mayumi Takamasa
 ---------------
 
 Miss Mayumi Takamasa is a seventeen-year-old female student in Tokyo,
+<<<<<<< HEAD
 Japan. In conversations about privacy risk, she is dismissive and
+=======
+Japan. In conversations about privacy risks, she is dismissive and
+>>>>>>> origin/master
 doesn’t care about advanced identity management. Online she has seen
 cyberbullying among her peers and goes to some effort to create
 boundaries between what she and her friends post for each other and what
 her mother can see.
 
+<<<<<<< HEAD
 Reframing: **MySociety** social game creates independent identity across
 social network platforms--without exposing content to uninvited eyes.
+=======
+Reframing: The **MySociety** social game creates independent identity across
+social network platforms — without exposing content to uninvited eyes.
+>>>>>>> origin/master
 The game creates pseudonymous social spaces with built-in privacy,
 disappearing messages, and points, levels, and badges based on social
 interactions.
@@ -96,8 +121,13 @@ made it out of the country. He has no technology to speak of and has
 provided authorities with a fake name. He needs health care and basic
 human services.
 
+<<<<<<< HEAD
 Reframing: **MyID**: a biometric + PIN secured digital datastore in a
 USB thumb drive gives Joram physical control over identity data that
+=======
+Reframing: **MyID**, a biometric-and-PIN-secured digital datastore in a
+USB thumb drive, gives Joram physical control over identity data that
+>>>>>>> origin/master
 only he has the power to share.
 
 Rutu Shah
@@ -107,7 +137,11 @@ Ms. Rutu Shah is a thirty-eight-year-old Mayor of a modest city in
 India, Ahmedabad[^2]. In her daily life she is wary of phishing attacks
 and security risks, but social and economic issues have taken priority
 over pushing for better identity across city services. She understands
+<<<<<<< HEAD
 the value, but struggles to push for change when commitments to
+=======
+the value, but struggles to push for change, as commitments to
+>>>>>>> origin/master
 drinkable water, better education, and sustainable jobs got her elected.
 She is particularly concerned about online predators and children’s
 safety.
@@ -149,6 +183,7 @@ A Day in the Life of Rutu Shah
 
 A fictional persona, Ms. Rutu Shah is the mayor of a modest city,
 Ahmedabad, India[^5]. Here we envision a day in her live, enhanced by
+<<<<<<< HEAD
 self-sovereign identity. ![](media/image2.jpg)
 
 \
@@ -334,6 +369,9 @@ Do not fight the existing reference, create a new one. Name things by
 what the user wants. In arguing that the user needs better identity
 measures, for instance, use Super Sign-On instead of DIDAUTH, and terms
 like Digital Dignity, Trusted Relationships ...
+=======
+self-sovereign identity. ![A Day in the Life of Ruta](../supporting-files/what-users-really-want-rutu.jpg)
+>>>>>>> origin/master
 
 [^1]: [*https://en.wikipedia.org/wiki/Amiens*](https://en.wikipedia.org/wiki/Amiens)
 
