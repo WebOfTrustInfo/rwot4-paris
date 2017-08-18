@@ -163,77 +163,77 @@ public function testCompactJSONWithUnencodedDetachedPayloadRS256()
 
 {
 
-$payload = '$.02';
+\$payload = '\$.02';
 
-$protected_header = [
+\$protected\_header = \[
 
 'alg' =&gt; 'RS256',
 
 'b64' =&gt; false,
 
-'crit' =&gt; ['b64'],
+'crit' =&gt; \['b64'\],
 
-];
+\];
 
-$key = JWKFactory::createFromKeyFile(
+\$key = JWKFactory::createFromKeyFile(
 
-__DIR__.'/../Unit/Keys/RSA/private.encrypted.key',
+\_\_DIR\_\_.'/../Unit/Keys/RSA/private.encrypted.key',
 
 'tests', // password for key
 
-[
+\[
 
 'kid' =&gt; 'My Private RSA key',
 
 'use' =&gt; 'sig',
 
-] // these options do not affect outcome of this test
+\] // these options do not affect outcome of this test
 
 );
 
-$jws = JWSFactory::createJWSWithDetachedPayloadToCompactJSON($payload,
-$key, $protected_header);
+\$jws = JWSFactory::createJWSWithDetachedPayloadToCompactJSON(\$payload,
+\$key, \$protected\_header);
 
-$this‑&gt;assertEquals('eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..fZRkjTTrcXdUovHjghM6JvlMhJuR1s8X1F4Uy_F4oMhZ9KtF2Zp78lYSOI7OxB5uoTu8FpQHvy‑dz3N4nLhoSWAi2_HrxZG_2DyctUUB_8pRKYBmIdIgpOlEMjIreOvXyM6A32gR‑PdbzoQq14yQbbfxk12jyZSwcaNu29gXnW_uO7ku1GSV_juWE5E_yIstvEB1GG8ApUGIuzRJDrAAa8KBkHN7Rdfhc8rJMOeSZI0dc_A‑Y7t0M0RtrgvV_FhzM40K1pwr1YUZ5y1N4QV13M5u5qJ_lBK40WtWYL5MbJ58Qqk_‑Q8l1dp6OCmoMvwdc7FmMsPigmyklqo46uyjjw',
-$jws);
+\$this‑&gt;assertEquals('eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..fZRkjTTrcXdUovHjghM6JvlMhJuR1s8X1F4Uy\_F4oMhZ9KtF2Zp78lYSOI7OxB5uoTu8FpQHvy‑dz3N4nLhoSWAi2\_HrxZG\_2DyctUUB\_8pRKYBmIdIgpOlEMjIreOvXyM6A32gR‑PdbzoQq14yQbbfxk12jyZSwcaNu29gXnW\_uO7ku1GSV\_juWE5E\_yIstvEB1GG8ApUGIuzRJDrAAa8KBkHN7Rdfhc8rJMOeSZI0dc\_A‑Y7t0M0RtrgvV\_FhzM40K1pwr1YUZ5y1N4QV13M5u5qJ\_lBK40WtWYL5MbJ58Qqk\_‑Q8l1dp6OCmoMvwdc7FmMsPigmyklqo46uyjjw',
+\$jws);
 
-$loader = new Loader();
+\$loader = new Loader();
 
-$loaded =
-$loader-&gt;loadAndVerifySignatureUsingKeyAndDetachedPayload(
+\$loaded =
+\$loader-&gt;loadAndVerifySignatureUsingKeyAndDetachedPayload(
 
-$jws,
+\$jws,
 
-$key,
+\$key,
 
-['RS256'],
+\['RS256'\],
 
-$payload,
+\$payload,
 
-$index
+\$index
 
 );
 
-$this-&gt;assertInstanceOf(JWSInterface::class, $loaded);
+\$this-&gt;assertInstanceOf(JWSInterface::class, \$loaded);
 
-$this-&gt;assertEquals(0, $index);
+\$this-&gt;assertEquals(0, \$index);
 
-$this-&gt;assertEquals($protected_header,
-$loaded-&gt;getSignature(0)-&gt;getProtectedHeaders());
+\$this-&gt;assertEquals(\$protected\_header,
+\$loaded-&gt;getSignature(0)-&gt;getProtectedHeaders());
 
 }
 ```
-Note this test uses the {"alg":"RS256","b64":false,"crit":["b64"]}
-header and $.02 as the unencoded payload.
+Note this test uses the {"alg":"RS256","b64":false,"crit":\["b64"\]}
+header and \$.02 as the unencoded payload.
 
 The test asserts that the input to the signing function, including the
 protected headers, should match:
 ```
-eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19.$.02
+eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19.\$.02
 ```
 And the resulting signature should match:
 ```
-eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..fZRkjTTrcXdUovHjghM6JvlMhJuR1s8X1F4Uy_F4oMhZ9KtF2Zp78lYSOI7OxB5uoTu8FpQHvy‑dz3N4nLhoSWAi2_HrxZG_2DyctUUB_8pRKYBmIdIgpOlEMjIreOvXyM6A32gR‑PdbzoQq14yQbbfxk12jyZSwcaNu29gXnW_uO7ku1GSV_juWE5E_yIstvEB1GG8ApUGIuzRJDrAAa8KBkHN7Rdfhc8rJMOeSZI0dc_A‑Y7t0M0RtrgvV_FhzM40K1pwr1YUZ5y1N4QV13M5u5qJ_lBK40WtWYL5MbJ58Qqk_‑Q8l1dp6OCmoMvwdc7FmMsPigmyklqo46uyjjw
+eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..fZRkjTTrcXdUovHjghM6JvlMhJuR1s8X1F4Uy\_F4oMhZ9KtF2Zp78lYSOI7OxB5uoTu8FpQHvy‑dz3N4nLhoSWAi2\_HrxZG\_2DyctUUB\_8pRKYBmIdIgpOlEMjIreOvXyM6A32gR‑PdbzoQq14yQbbfxk12jyZSwcaNu29gXnW\_uO7ku1GSV\_juWE5E\_yIstvEB1GG8ApUGIuzRJDrAAa8KBkHN7Rdfhc8rJMOeSZI0dc\_A‑Y7t0M0RtrgvV\_FhzM40K1pwr1YUZ5y1N4QV13M5u5qJ\_lBK40WtWYL5MbJ58Qqk\_‑Q8l1dp6OCmoMvwdc7FmMsPigmyklqo46uyjjw
 ```
 Our prototypes successfully matched this testcase, and matched results
 on JSON-LD claim inputs.
@@ -247,7 +247,7 @@ The signing flow for the 2017 RSA Signature Suite is identical to other
 signature suites in the [JSON-LD signature
 library](https://github.com/digitalbazaar/jsonld-signatures); the
 processing required to implement 2017 RSA Signatures is confined to step
-#5 bolded below (all other steps are unchanged). A new algorithm,
+\#5 bolded below (all other steps are unchanged). A new algorithm,
 RsaSignature2017, was added to implement this signature suite.
 
 The LD signature algorithm works as follows:
@@ -266,7 +266,7 @@ JSON-LD Signing Algorithm:
     called URDNA2015)
 
 4.  Prepend the JSON-LD signature options date, domain, nonce to the
-    input to sign, as implemented in the _getDataToHash method of the
+    input to sign, as implemented in the \_getDataToHash method of the
     JSON-LD signature library
 
 5.  **Sign with the 2017 RSA Signature Suite** (details in next section)
@@ -280,7 +280,7 @@ We'll refer to steps 2-4 of the JSON-LD signing algorithm as the
 
 ### Signing with the 2017 RSA Signature Suite
 
-This section drills into step #5 above.
+This section drills into step \#5 above.
 
 To extend the [JSON-LD signature
 library](https://github.com/digitalbazaar/jsonld-signatures) to support
@@ -291,11 +291,11 @@ function createSignature.
 First, suppose a JWS library with unencoded payload support were
 available. If so, then the steps would be:
 
-1. Form the JWS Headers
+1\. Form the JWS Headers
 
 Per [RFC 7797](https://tools.ietf.org/html/rfc7797), creating a JWS
 signature using the unencoded payload option requires the JWS Header
-parameters "b64":false and "crit":["b64"]. In addition to these
+parameters "b64":false and "crit":\["b64"\]. In addition to these
 parameters, RsaSignature2017 specifies using RSA Signatures with
 SHA-256. This corresponds to a JWS signing algorithm of RS256.
 
@@ -307,21 +307,21 @@ In sum the complete set of JWS headers used for a 2017 RSA Signature is:
 
 "b64":false,
 
-"crit":["b64"]
+"crit":\["b64"\]
 
 }
 ```
-2. Call the JWS library with headers from #1 (parameter 1: headers) and
+2\. Call the JWS library with headers from \#1 (parameter 1: headers) and
 the JSON-LD canonicalized payload (parameter 2: payload)
 
 result = sign(headers: JSON, payload: STRING);
 
-3. Update the LD signature block to contain
+3\. Update the LD signature block to contain
 signatureValue=&lt;result&gt;
 
 #### Implementing JWS unencoded payload signing
 
-In step #2 above, we assumed the availability of a JWS library
+In step \#2 above, we assumed the availability of a JWS library
 supporting unencoded payloads. Because we only found a PHP library
 supporting unencoded payloads, we needed to implement those steps in the
 language we chose.
@@ -409,7 +409,7 @@ To our knowledge the JOSE specs do not specify how JSON headers should
 be ordered. In our implementations, we ensured consistent
 lexicographical sorting of JWS headers. This is not critical since the
 encoded header is included in the signature, but our goal was to produce
-consistent signatures (similar to what's done in _getDataToHash.
+consistent signatures (similar to what's done in \_getDataToHash.
 
 Specifying the sorting of the keys, the separators and the encoding
 should be enough for any implementation to be able to produce the same
@@ -419,41 +419,41 @@ signature.
 ```
 import json
 
-header = {'alg': 'RS256', 'b64': False, 'crit': ['b64']}
+header = {'alg': 'RS256', 'b64': False, 'crit': \['b64'\]}
 
-# stringify json
+\# stringify json
 
-# there are no guarantees about the ordering of the keys and the
+\# there are no guarantees about the ordering of the keys and the
 separators use
 
-# a whitespace between the keys
+\# a whitespace between the keys
 
 json.dumps(header)
 
-'{"crit": ["b64"], "alg": "RS256", "b64": false}'
+'{"crit": \["b64"\], "alg": "RS256", "b64": false}'
 
-# we can specify the separators. In this case we say we don't want
+\# we can specify the separators. In this case we say we don't want
 whitespaces
 
 json.dumps(header, separators=(',', ':'))
 
-'{"crit":["b64"],"alg":"RS256","b64":false}'
+'{"crit":\["b64"\],"alg":"RS256","b64":false}'
 
-# and we can specify the ordering of the keys
+\# and we can specify the ordering of the keys
 
-json.dumps(header, separators=(',', ':'), sort_keys=True)
+json.dumps(header, separators=(',', ':'), sort\_keys=True)
 
-'{"alg":"RS256","b64":false,"crit":["b64"]}'
+'{"alg":"RS256","b64":false,"crit":\["b64"\]}'
 
-# ultimately we can specify the encoding to use and return a bytestring
+\# ultimately we can specify the encoding to use and return a bytestring
 that
 
 can then be used to base64 encode / sign / hash
 
 json.dumps(header, separators=(',', ':'),
-sort_keys=True).encode('utf-8')
+sort\_keys=True).encode('utf-8')
 
-b'{"alg":"RS256","b64":false,"crit":["b64"]}'
+b'{"alg":"RS256","b64":false,"crit":\["b64"\]}'
 ```
 Reference: Modifications to javascript JSON-LD signature library to support 2017 RSA Signature Suite
 ----------------------------------------------------------------------------------------------------
@@ -463,11 +463,11 @@ repo](https://github.com/WebOfTrustInfo/ld-signatures-js) contains the
 2017 RSA Signature Suite prototype
 
 The modifications are: - Add new algorithm type RsaSignature2017 - Add
-new paths to _createSignature to support RsaSignature2017 (Node.js and
-Javascript environments) - Add new paths to _verifySignature to support
+new paths to \_createSignature to support RsaSignature2017 (Node.js and
+Javascript environments) - Add new paths to \_verifySignature to support
 RsaSignature2017 (Node.js and Javascript environments)
 
-For example, the inlined implementation of _createSignature with
+For example, the inlined implementation of \_createSignature with
 algorithm RsaSignature2017 (Node.js environment) is:
 ```
 var crypto = api.use('crypto');
@@ -476,7 +476,7 @@ var signer = crypto.createSign('RSA-SHA256');
 
 // detached signature headers for JWS
 
-var protectedHeader = {"alg":"RS256","b64":false,"crit":["b64"]};
+var protectedHeader = {"alg":"RS256","b64":false,"crit":\["b64"\]};
 
 var stringifiedHeader = JSON.stringify(protectedHeader,
 Object.keys(protectedHeader).sort());
@@ -485,12 +485,12 @@ var b64UrlEncodedHeader = base64url.encode(stringifiedHeader);
 
 // jws input to sign
 
-var to_sign = b64UrlEncodedHeader + "." + _getDataToHash(input,
+var to\_sign = b64UrlEncodedHeader + "." + \_getDataToHash(input,
 options);
 
 // sign
 
-signer.update(to_sign, 'utf-8');
+signer.update(to\_sign, 'utf-8');
 
 var signaturePart = signer.sign(options.privateKeyPem, 'base64');
 
