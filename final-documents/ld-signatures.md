@@ -158,7 +158,7 @@ as the basis for a new test using the RSA-SHA256 algorithm.
 
 The resulting unit test is shown in the included
 testCompactJSONWithUnencodedDetachedPayloadRS256.
-
+```
 public function testCompactJSONWithUnencodedDetachedPayloadRS256()
 
 {
@@ -222,19 +222,19 @@ public function testCompactJSONWithUnencodedDetachedPayloadRS256()
 \$loaded-&gt;getSignature(0)-&gt;getProtectedHeaders());
 
 }
-
+```
 Note this test uses the {"alg":"RS256","b64":false,"crit":\["b64"\]}
 header and \$.02 as the unencoded payload.
 
 The test asserts that the input to the signing function, including the
 protected headers, should match:
-
+```
 eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19.\$.02
-
+```
 And the resulting signature should match:
-
+```
 eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..fZRkjTTrcXdUovHjghM6JvlMhJuR1s8X1F4Uy\_F4oMhZ9KtF2Zp78lYSOI7OxB5uoTu8FpQHvy‑dz3N4nLhoSWAi2\_HrxZG\_2DyctUUB\_8pRKYBmIdIgpOlEMjIreOvXyM6A32gR‑PdbzoQq14yQbbfxk12jyZSwcaNu29gXnW\_uO7ku1GSV\_juWE5E\_yIstvEB1GG8ApUGIuzRJDrAAa8KBkHN7Rdfhc8rJMOeSZI0dc\_A‑Y7t0M0RtrgvV\_FhzM40K1pwr1YUZ5y1N4QV13M5u5qJ\_lBK40WtWYL5MbJ58Qqk\_‑Q8l1dp6OCmoMvwdc7FmMsPigmyklqo46uyjjw
-
+```
 Our prototypes successfully matched this testcase, and matched results
 on JSON-LD claim inputs.
 
@@ -300,7 +300,7 @@ parameters, RsaSignature2017 specifies using RSA Signatures with
 SHA-256. This corresponds to a JWS signing algorithm of RS256.
 
 In sum the complete set of JWS headers used for a 2017 RSA Signature is:
-
+```
 {
 
 "alg":"RS256",
@@ -310,7 +310,7 @@ In sum the complete set of JWS headers used for a 2017 RSA Signature is:
 "crit":\["b64"\]
 
 }
-
+```
 2\. Call the JWS library with headers from \#1 (parameter 1: headers) and
 the JSON-LD canonicalized payload (parameter 2: payload)
 
@@ -416,7 +416,7 @@ should be enough for any implementation to be able to produce the same
 signature.
 
 #### Example in python:
-
+```
 import json
 
 header = {'alg': 'RS256', 'b64': False, 'crit': \['b64'\]}
@@ -454,7 +454,7 @@ json.dumps(header, separators=(',', ':'),
 sort\_keys=True).encode('utf-8')
 
 b'{"alg":"RS256","b64":false,"crit":\["b64"\]}'
-
+```
 Reference: Modifications to javascript JSON-LD signature library to support 2017 RSA Signature Suite
 ----------------------------------------------------------------------------------------------------
 
@@ -469,7 +469,7 @@ RsaSignature2017 (Node.js and Javascript environments)
 
 For example, the inlined implementation of \_createSignature with
 algorithm RsaSignature2017 (Node.js environment) is:
-
+```
 var crypto = api.use('crypto');
 
 var signer = crypto.createSign('RSA-SHA256');
@@ -498,7 +498,7 @@ var signaturePart = signer.sign(options.privateKeyPem, 'base64');
 '..' + &lt;signaturePath&gt;
 
 var signature = b64UrlEncodedHeader + ".." + signaturePart;
-
+```
 **Reminder:** This inlined version is to demonstrate the computations
 performed. It includes steps that should be performed by a JWS library
 supporting unencoded payloads. The [ld-signatures-js
