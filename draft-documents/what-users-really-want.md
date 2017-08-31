@@ -143,7 +143,7 @@ A fictional persona, Ms. Rutu Shah is the mayor of a modest city,
 Ahmedabad, India[^5]. Here we envision a day in her live, enhanced by
 self-sovereign identity. 
 
-![](media/image2.jpg)
+![](../suporting-files/what-users-really-want-rutu.jpg)
 
 [^1]: [*https://en.wikipedia.org/wiki/Amiens*](https://en.wikipedia.org/wiki/Amiens)
 
