@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-Authors
-=======
-=======
 # Design Considerations for Decentralized Reputation Systems
 
 ### Authors
->>>>>>> origin/master
 
 Lead:
 
@@ -27,12 +22,7 @@ Contributors:
 
 -   Shaun Conway – shaun@consent.global
 
-<<<<<<< HEAD
-<span id="_i1a2d35kx345" class="anchor"><span id="_88tlcuxq35m1" class="anchor"><span id="_6wymlhw328jf" class="anchor"></span></span></span>Abstract
-=====================================================================================================================================================
-=======
 ## Abstract
->>>>>>> origin/master
 
 Reputation systems provide an effective way to build a web of trust on
 the Internet. They consider the history of interactions between peers to
@@ -96,12 +86,7 @@ as particular implementations may have differing reasons for each.
 However, we anticipate that best practices for these considerations will
 be topics for future analysis.
 
-<<<<<<< HEAD
-Previous Work
-=============
-=======
 ## Previous Work
->>>>>>> origin/master
 
 Resnick et al.[^1] detail three high-level properties that reputations
 systems require and highlight challenges related to the capture
@@ -117,12 +102,7 @@ Koutrouli et al.[^3] look at the basic element and design issues of
 reputation-based trust models in peer-to-peer systems, so that each peer
 can make autonomous trust decisions based on other peers’ reputations.
 
-<<<<<<< HEAD
-1. Context Dependence
-=====================
-=======
 ## 1. Context Dependence
->>>>>>> origin/master
 
 ***Definition:** The formal set of hypotheses used to define the value
 scale of reputation statements in the system and the scope to which the
@@ -159,12 +139,7 @@ in different systems, but matching between contexts should be made with
 explicit rules that are carefully targeted at this precise matching.
 This creates a new context, with its own rules and guides of conduct.
 
-<<<<<<< HEAD
-2. Participation
-================
-=======
 ## 2. Participation
->>>>>>> origin/master
 
 ***Definition:** The rules by which entities can determine whether or
 not they will partake or be considered by the network or by which the
@@ -192,12 +167,7 @@ privacy. Note that this only defines which entities can have a
 reputation linked to them: it is separate from whether or not that
 entity chooses to reveal that reputation.
 
-<<<<<<< HEAD
-3. Consent
-==========
-=======
 ## 3. Consent
->>>>>>> origin/master
 
 ***Definition:** the rules by which entities accept claims against them
 or allow the viewing of claims or reputation values.*
@@ -230,12 +200,7 @@ these requirements will be necessarily be present in any system.
     restriction to associate such data with the related emitting or
     receiving individual.
 
-<<<<<<< HEAD
-4. Confidentiality
-==================
-=======
 ## 4. Confidentiality
->>>>>>> origin/master
 
 ***Definition:** How to ensure that no data is leaked and that other
 considerations are not violated by derivation of metadata or analysis.*
@@ -250,12 +215,7 @@ that enables information to be derived.
 This information falls into a number of categories, for a case where
 Alice is sending a claim against Bob.
 
-<<<<<<< HEAD
-Privacy of Sender (“Alice”)
----------------------------
-=======
 ### Privacy of Sender (“Alice”)
->>>>>>> origin/master
 
 This may include:
 
@@ -285,12 +245,7 @@ This may include:
     revocation-specific data: connections with revoked endorsements,
     without revoked endorsements, validity time, etc.
 
-<<<<<<< HEAD
-Privacy of Recipient (Bob)
---------------------------
-=======
 ### Privacy of Recipient (Bob)
->>>>>>> origin/master
 
 This includes:
 
@@ -316,12 +271,7 @@ This includes:
     whole, for example the most active years and months or inactive
     years and months.
 
-<<<<<<< HEAD
-Group Privacy
--------------
-=======
 ### Group Privacy
->>>>>>> origin/master
 
 This includes:
 
@@ -333,12 +283,7 @@ The above definitions are examples. However, each design should balance
 the need for metadata that may assist in analysis and identification of
 bad actors against the potential for network attack.
 
-<<<<<<< HEAD
-5. Value Generation
-===================
-=======
 ## 5. Value Generation
->>>>>>> origin/master
 
 ***Definition:** the process to establish the reputation value of an
 entity on the reputation network based on the required inputs.*
@@ -376,12 +321,7 @@ value include:
 8.  Behavioral – Does a reputation value change depending on how it has
     been used or an entity’s behavior?
 
-<<<<<<< HEAD
-6. Performance
-==============
-=======
 ## 6. Performance
->>>>>>> origin/master
 
 ***Definition:** how to ensure the network and its participants perform
 as expected.*
@@ -401,12 +341,7 @@ fall into two categories:
 2.  System performance as a function of architectural design choices, or
     at the network level.
 
-<<<<<<< HEAD
-Node Performance
-----------------
-=======
 ### Node Performance
->>>>>>> origin/master
 
 The requirements for nodes on a DRS should be clearly defined to ensure
 that they can contribute effectively to the network, in addition to
@@ -443,12 +378,7 @@ performance via monetary and non-monetary means, and/or punishment of
 bad performance via monetary and non-monetary means, up to exclusion
 from the network.
 
-<<<<<<< HEAD
-Network performance
--------------------
-=======
 ### Network performance
->>>>>>> origin/master
 
 An effective distributed network is scalable, with maximum uptime, and
 coordinates communication between nodes in a rapid, efficient manner.
@@ -477,12 +407,7 @@ Built-in rules regarding **responsiveness of the network** will likely
 be required, and these should be defined in correlation with the defined
 performance considerations.
 
-<<<<<<< HEAD
-7. Sustainability
-=================
-=======
 ## 7. Sustainability
->>>>>>> origin/master
 
 ***Definition:** The system’s ability to evolve and remain accurate over
 time.*
@@ -503,12 +428,7 @@ the market naturally corrects any diversions with time.
 These desires and ethics may include any aspect of any one of the design
 considerations.
 
-<<<<<<< HEAD
-8. Claim Life-cycle
-===================
-=======
 ## 8. Claim Life-cycle
->>>>>>> origin/master
 
 ***Definition:** how to manage claims made on the network and the
 impacts they may have over time.*
@@ -530,12 +450,7 @@ These conditions may include:
 
 -   Dispute resolution/adjudication.
 
-<<<<<<< HEAD
-9. Resilience
-=============
-=======
 ## 9. Resilience
->>>>>>> origin/master
 
 ***Definition:** The ability of the system to tolerate malicious
 behaviour.*
@@ -599,12 +514,7 @@ Ultimately, there may be an inherent Security and Privacy trade-off. For
 example, when Alice assesses the reputation of Bob, she may wish to
 learn as much information as possible in order to avoid attacks.
 
-<<<<<<< HEAD
-10. Legal
-=========
-=======
 ## 10. Legal
->>>>>>> origin/master
 
 ***Definition:** the legal environment in which the network may
 operate.*
@@ -626,12 +536,7 @@ compensatory damages there are also motions to identify the defamatory
 party. injunctions to prevent further publication of defamatory
 information.
 
-<<<<<<< HEAD
-Conclusion
-==========
-=======
 ## Conclusion
->>>>>>> origin/master
 
 The authors believe that the above ten design considerations can be used
 as a framework to design and implement effective decentralized
