@@ -16,7 +16,9 @@ This is a listing of all the papers, specs, or other works in progress from Rebo
 
 _Numbering is based on [the Topic Recap recording](../event-documents/graphic-recording/Topic%20Recap.jpg) solely to maintain consistency in keeping track of everything._
 
-Cut due to problems:
+Cut due to challenges discovered at the Hackathon:
 
+| **Paper** | **Contact** | **Link** | **Abstract** | **Status** | 
+|-----------|----------|----------|--------------|------------|
 | (4) DID Method Specs | Ryan (rgrant) | [Outline](https://docs.google.com/document/d/15HWtXTDXcvyUjgAqnewPoZKbgSWhl-XiIDas1ip94Hs/edit) | [Abstract](../event-documents/group-abstracts/work-abstract-did-methods-btcr-pgpr.md) | August |
 | (4.1) DID Method Spec: Bitcoin | Christopher + Ryan | | 
