@@ -1,4 +1,4 @@
-# What Users Really Want
+# Re-Imagining What Users Really Want
 
 ### A paper of the Rebooting the Web of Trust workshop, Paris, 2017
 
