@@ -27,7 +27,7 @@ The design workshop met its goal of three to five white papers with three to-dat
 
 > Bringing JSON-LD signatures into alignment with JOSE JSON Web Signature (JWS) standards.
 
-## [*What Users Really Want*](final-documents/what-users-really-want.pdf)
+## [*Re-Imagining What Users Really Want*](final-documents/what-users-really-want.pdf)
 #### by Joe Andrieu, Frederic Engel, Adam Lake, Moses Ma, Olivier Maas, and Mark van der Waal
 
 > Five people, five opportunities for self-sovereign identity.
