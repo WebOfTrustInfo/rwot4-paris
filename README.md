@@ -2,7 +2,7 @@
 
 This repository contains documents related to RWOT4, the fourth Rebooting the Web of Trust design workshop, which ran in Paris, France, on April 19th-21st, 2017. The goal of the workshop was to generate five technical white papers and/or proposals on topics decided by the group that would have the greatest impact on the future.
 
-_The next Rebooting the Web of Trust design workshop will be October 3-5 in Boston, Masachusetts at IDEO._
+_Please see the [Web of Trust Info website](http://www.weboftrust.info/) for more information about our community, including upcoming events._
 
 ##  Topics & Advance Readings
 
@@ -41,6 +41,7 @@ A different repository is available for each of the Rebooting the Web of Trust d
 * [Rebooting the Web of Trust III: San Francisco (October 2016)](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016)
 * [Rebooting the Web of Trust IV: Paris (April 2017)](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017)
 * [Rebooting the Web of Trust V: Boston (October 2017)](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2017)
+* [Rebooting the Web of Trust VI: Santa Barbara (March 2018)](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2018)
 
 ## License
 
