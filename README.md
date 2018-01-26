@@ -15,7 +15,7 @@ Please see the [Advance Readings README](topics-and-advance-readings/README.md) 
 
 ## Completed Papers
 
-The design workshop met its goal of three to five white papers with three to-date, and others ongoing.
+The design workshop met its goal of three to five white papers with three total.
 
 ## [*Design Considerations for Decentralized Reputation Systems*](final-documents/reputation-design.pdf)
 #### by Angus Champion de Crespigny, Dmitry Khovratovich, Florent Blondeau, Klara Sok, Philippe Honigman, Nikolaos Alexopoulos, Fabien Petitcolas, and Shaun Conway
