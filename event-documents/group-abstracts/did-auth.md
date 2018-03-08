@@ -5,11 +5,11 @@
 
 # Introduction
 
-Quick summary of the points from the [topic paper](../topics-and-advance-readings/did-auth.md):
+Quick summary of the points from the [topic paper](../../topics-and-advance-readings/did-auth.md):
 * Everyone's doing "blockchain auth" already. We want to standardise on DIDs, and we need interoperability on authentication before we can hope to have interoperability on exchanging verifiable claims and other more sophisticated transactions. We should therefore be doing DID Auth.
 * Here's how you authenticate between a client and server by proving control over a DID.
 
-![did-auth](../supporting-files/did-auth.jpg)
+![did-auth](../../supporting-files/did-auth.jpg)
 
 # Terminology
 
@@ -17,7 +17,7 @@ Quick summary of the points from the [topic paper](../topics-and-advance-reading
 * Content Server - the protected resource the user is seeking to access
 * Challenge Endpoint - the means by which an authentication challenge is delivered to the user (typically a URI stored in DDO)
 
-![actors](../supporting-files/did-auth-actors.jpg)
+![actors](../../supporting-files/did-auth-actors.jpg)
 
 # Use Cases
 
@@ -53,13 +53,13 @@ TODO: includes making a connection?
 
 ## Flow 1
 
-![flow-1](../supporting-files/did-auth-flow-1.jpg)
+![flow-1](../../supporting-files/did-auth-flow-1.jpg)
 
 ## Flow 2
 
 ## Flow 3
 
-![flow-3](../supporting-files/did-auth-flow-3.jpg)
+![flow-3](../../supporting-files/did-auth-flow-3.jpg)
 
 Orchestration (steps 6 & 8) may involve scanning a QR code, communication via Bluetooth, etc.
 
@@ -69,7 +69,7 @@ Orchestration (steps 6 & 8) may involve scanning a QR code, communication via Bl
 
 ## Flow 6
 
-![flow-6](../supporting-files/did-auth-flow-6.jpg)
+![flow-6](../../supporting-files/did-auth-flow-6.jpg)
 
 This assumes the Content Server is already aware of the DID (or it is communicated in step 1).
 
@@ -138,7 +138,7 @@ TODO explain alignment with (and improvements over) other standards (and non-sta
 * Want to avoid "NASCAR syndrome" with login buttons
   * Can the Content Server be aware of the authentication methods available to the user so it can display appropriate options? This has privacy implications.
 * Should collect a list of apps from the RWOT community which have implemented flows _similar_ to this, and ask them to pledge compliance:
-  * Digital Bazaar / Authorization.io 
+  * Digital Bazaar / Authorization.io
   * uPort
   * Evernym
   * Dappre
