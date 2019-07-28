@@ -39,7 +39,7 @@ The DID specification covers the bottom layer of a decentralized public key infr
 
 ![DKMS Layer Diagram](https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2017/blob/master/topics-and-advance-readings/dkms-layers-diagram.png)
 
-At the edge layer, devices (mobile phones, laptops, desktops, firewalled servers) run one or more apps that maintain DMKS-compliant wallet(s) for storage of private keys and master secrets. These apps are where the primary user interface challenges of DKMS will be met—especially key recovery, since a decentralized identity owner is the sole authority for his/her own private keys.
+At the edge layer, devices (mobile phones, laptops, desktops, firewalled servers) run one or more apps that maintain DKMS-compliant wallet(s) for storage of private keys and master secrets. These apps are where the primary user interface challenges of DKMS will be met—especially key recovery, since a decentralized identity owner is the sole authority for his/her own private keys.
 Apps communicate with each other—and often with the ledger layer—via the agent layer. Agents offer a host of services that enable core DKMS functions: DID resolution, encrypted wallet backup and synchronization, push notifications, real-time public key verification, off-ledger exchange and verification of verifiable claims, and bootstrapping of encrypted private P2P communications channels.
 
 # Benefits
